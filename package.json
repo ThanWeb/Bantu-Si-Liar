@@ -1,0 +1,19 @@
+{
+    "name": "bantu-si-liar",
+    "version": "1.0.0",
+    "description": "Sebuah situs web yang dibuat dengan tujuan untuk membantu hewan-hewan liar yang berkeliaran di masyarakat dan tidak memiliki majikan ataupun tempat tinggal",
+    "main": "index.js",
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "author": "Kelompok C22-008 Studi Independen Dicoding Batch 3",
+    "license": "ISC",
+    "devDependencies": {
+        "eslint": "^8.26.0",
+        "eslint-config-standard": "^17.0.0",
+        "eslint-plugin-import": "^2.26.0",
+        "eslint-plugin-n": "^15.4.0",
+        "eslint-plugin-promise": "^6.1.1",
+        "eslint-plugin-react": "^7.31.10"
+    }
+}
