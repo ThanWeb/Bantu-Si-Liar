@@ -4,7 +4,8 @@
     "description": "Sebuah situs web yang dibuat dengan tujuan untuk membantu hewan-hewan liar yang berkeliaran di masyarakat dan tidak memiliki majikan ataupun tempat tinggal",
     "main": "index.js",
     "scripts": {
-        "test": "echo \"Error: no test specified\" && exit 1"
+        "build": "webpack --config ./webpack.prod.js",
+        "dev": "webpack serve --config ./webpack.dev.js"
     },
     "author": "Kelompok C22-008 Studi Independen Dicoding Batch 3",
     "license": "ISC",
