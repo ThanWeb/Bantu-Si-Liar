@@ -15,5 +15,9 @@
         "eslint-plugin-n": "^15.4.0",
         "eslint-plugin-promise": "^6.1.1",
         "eslint-plugin-react": "^7.31.10"
+    },
+    "dependencies": {
+        "react": "^18.2.0",
+        "react-dom": "^18.2.0"
     }
 }
