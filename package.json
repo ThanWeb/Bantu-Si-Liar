@@ -9,12 +9,18 @@
     "author": "Kelompok C22-008 Studi Independen Dicoding Batch 3",
     "license": "ISC",
     "devDependencies": {
+        "copy-webpack-plugin": "^11.0.0",
+        "css-loader": "^6.7.2",
         "eslint": "^8.26.0",
         "eslint-config-standard": "^17.0.0",
         "eslint-plugin-import": "^2.26.0",
         "eslint-plugin-n": "^15.4.0",
         "eslint-plugin-promise": "^6.1.1",
         "eslint-plugin-react": "^7.31.10",
+        "html-webpack-plugin": "^5.5.0",
+        "sass": "^1.56.1",
+        "sass-loader": "^13.2.0",
+        "style-loader": "^3.3.1",
         "webpack": "^5.75.0",
         "webpack-cli": "^5.0.0",
         "webpack-dev-server": "^4.11.1"
