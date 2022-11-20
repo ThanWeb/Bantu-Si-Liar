@@ -1,4 +1,9 @@
 import './style/style.scss'
-import main from './script/main.js'
+import React from 'react'
+import { createRoot } from 'react-dom/client'
+import App from './App'
 
-document.addEventListener('DOMContentLoaded', main)
+const root = createRoot(document.getElementById('root'))
+root.render(
+    <App />
+)
