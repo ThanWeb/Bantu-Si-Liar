@@ -5,7 +5,9 @@
     "main": "index.js",
     "scripts": {
         "build": "webpack --config ./webpack.prod.js",
-        "dev": "webpack serve --config ./webpack.dev.js"
+        "dev": "webpack serve --config ./webpack.dev.js",
+        "serve": "http-server dist",
+        "build-serve": "npm run build && npm run serve"
     },
     "author": "Kelompok C22-008 Studi Independen Dicoding Batch 3",
     "license": "ISC",
