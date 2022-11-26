@@ -34,7 +34,9 @@ function InputLogin ({ login }) {
                 />
                 <p className="text-error">{password}</p>
             </div>
-            <button className="btn-auth">Sign In</button>
+            <div className='button-container'>
+                <button className="btn-auth">Masuk</button>
+            </div>
         </form>
     )
 }
