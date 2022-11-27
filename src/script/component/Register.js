@@ -31,7 +31,7 @@ const Register = ({ register }) => {
 
     return (
         <form onSubmit={onSubmit} className='input-register'>
-            <section className='akun'>
+            <section className='data'>
                 <label htmlFor="username">Username</label>
                 <input
                     type='text'
@@ -58,7 +58,7 @@ const Register = ({ register }) => {
                     onChange={onProfileChange}
                 />
             </section>
-            <section className='data-diri'>
+            <section className='data'>
                 <h2>Data Diri</h2>
                 <label htmlFor="name">Nama</label>
                 <input

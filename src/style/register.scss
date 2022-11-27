@@ -1,15 +1,10 @@
+//mobile
 .page-register{
-	background: linear-gradient(
-		to right,
-		rgba(76, 161, 175, 1),
-		rgba(196, 224, 229, 1)
-	);
 	padding: 20px;
-	align-items: center;
 }
 header{
-	text-align: center;
 	display: block;
+	text-align: center;
 }
 header img{
     width: 100px;
@@ -18,24 +13,25 @@ header img{
 header img .logo{
 	max-width: 100%;
     height: auto;
-	background: transparent;
 }
 h1, h2{
 	font-family: 'Vollkorn';
 }
 .input-register{
+	margin: 20px auto;
 	padding: 10px;
-    display: flex;
-    flex-direction: column;
-	justify-content: center;
+    text-align:justify;
 	font-family: 'Vesper Libre';
-	display: block;
-}
-.akun, .data-diri{
     display: flex;
-    flex-direction: column;
+    grid-row-gap: 20px;
+	flex-wrap: wrap;
+	justify-content: center;
+}
+.data{
+	display: flex;
+	flex-direction: column;
 	gap: 5px;
-	margin-bottom: 5px;
+	width: 100%;
 }
 h2{
 	font-size: 20px;
@@ -48,7 +44,6 @@ h2{
     padding: 5px;
     border: none;
     border-radius: 5px;
-	display: block;
 }
 .input-register, .address{
 	min-height: 50px;
@@ -58,11 +53,9 @@ h2{
 }
 button{
 	background-color: rgb(48, 94, 143);
-	display: block;
 	margin-top: 5px;
 	margin-right: 25%;
 	margin-left: 25%;
-	display: flex;
     justify-content: center;
 	align-content: center;
 }
@@ -74,4 +67,58 @@ button{
     border-radius: 5px;
     cursor: pointer;
 	text-align: center;
+}
+
+//tablet
+@media screen and (min-width:600px) {
+	.data {
+		max-width: 500px;
+	}
+	button{
+		max-width: 300px;
+	}
+}
+@media screen and (min-width:768px){
+	.input-register {
+        gap: 20px;
+	}
+	.data {
+		max-width: 325px;
+	}
+	h2{
+		display: none;
+	}
+	button{
+		max-width: 325px;
+		height: 30px;
+	}
+}
+//laptop
+@media screen and (min-width:1024px){
+	.data {
+		max-width: 450px;
+	}
+}
+@media screen and (min-width:1220px){
+	h1{
+		font-size: 25px;
+	}
+	.data {
+		max-width: 500px;
+	}
+	.input-register label{
+		font-size: 18px;
+	}
+	.input-register input, select{
+		padding: 8px;
+		border: none;
+		border-radius: 8px;
+	}
+	button{
+		max-width: 400px;
+		padding: 10px;
+		height: 40px;
+		font-size: 15px;
+	}
+	
 }
