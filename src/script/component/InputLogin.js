@@ -17,25 +17,28 @@ function InputLogin ({ login }) {
     return (
         <form onSubmit={onSubmitHandler} className="form-input">
             <div className="wrap-input">
+                <label>Email/Username </label>
                 <input
                     type="email"
                     value={email}
                     onChange={handleEmailChange}
-                    placeholder="email" required
+                    placeholder="email"
+                    required
                 />
-                <p className="text-error"></p>
+
             </div>
             <div className="wrap-input">
+                <label>Password</label>
                 <input
                     type="password"
                     value={password}
                     onChange={handlePasswordChange}
-                    placeholder="password" required
+                    placeholder="password"
+                    required
                 />
-                <p className="text-error">{password}</p>
             </div>
             <div className='button-container'>
-                <button className="btn-auth">Masuk</button>
+                <button type="submit" className="btn-auth">Masuk</button>
             </div>
         </form>
     )
