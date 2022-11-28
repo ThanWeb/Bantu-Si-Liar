@@ -18,21 +18,19 @@ function LoginPage () {
 
     return (
         <div className="row">
-            <div className="side">
+            <section className="side">
                 <img src={AnimasiLogin} alt="" width="50%" />
-            </div>
-            <div className="container-form">
-                <div className="form-parent">
-                    <div className="header-logo">
-                        <img className="logo" src={Logo} alt="" width="10%" />
-                    </div>
-                    <h2>SELAMAT DATANG KEMBALI !</h2>
-                    <InputLogin login={onLogin} />
-                    <hr></hr>
-                    <p>Belum punya akun?
-                        <span><Link to='/register'>Daftar</Link></span>
-                    </p>
-                </div>
+            </section>
+            <div className="login-page">
+                <header>
+                    <img className="logo" src={Logo} alt="" width="10%" />
+                </header>
+                <h2>SELAMAT DATANG KEMBALI !</h2>
+                <InputLogin login={onLogin} />
+                <hr></hr>
+                <p className='footer-form'>Belum punya akun ?
+                    <span>{' '}<Link to='/register'>Daftar</Link></span>
+                </p>
             </div>
         </div>
 
