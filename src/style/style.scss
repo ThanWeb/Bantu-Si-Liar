@@ -1,11 +1,13 @@
 @import './reset/reset.scss';
 @import './register.scss';
+@import './section/header.scss';
+@import './section/main.scss';
 
 body {
     font-family: 'Courier New', Courier, monospace;
-	background: linear-gradient(
-		to right,
-		rgba(76, 161, 175, 1),
-		rgba(196, 224, 229, 1)
-	);
+    background: linear-gradient(
+      to right,
+      rgba(76, 161, 175, 1),
+      rgba(196, 224, 229, 1)
+    );
 }

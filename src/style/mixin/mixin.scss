@@ -1,0 +1,47 @@
+@mixin tablet {
+    @media screen and (min-width: $screen-tablet) {
+        @content;
+    }
+}
+
+@mixin desktop {
+    @media screen and (min-width: $screen-desktop) {
+        @content;
+    }
+}
+  
+@mixin large-desktop {
+    @media screen and (min-width: $screen-large-desktop) {
+        @content;
+    }
+}
+
+@mixin extra-large-desktop {
+    @media screen and (min-width: $screen-extra-large-desktop) {
+        @content;
+    }
+}
+
+@mixin  flex-box($direction: row, $justify: center, $align: center) {
+    display: flex;
+    flex-direction: $direction;
+    justify-content: $justify;
+    align-items: $align;
+}
+
+@mixin sticky-elemen ($y-pos: top, $x-pos: left) {
+    position: fixed;
+    width: 100%;
+
+    @if $y-pos == top {
+        top: 0;
+    } @else {
+        bottom: 0;
+    }
+
+    @if $x-pos == left {
+        left: 0;
+    } @else {
+        right: 0;
+    }
+}
