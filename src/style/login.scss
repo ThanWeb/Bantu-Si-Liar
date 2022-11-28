@@ -1,3 +1,12 @@
+.login-page {
+    flex: 70%;
+    height: 100vh;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(to right, rgba(76, 161, 175, 1), rgba(196, 224, 229, 1));
+    padding: 40px;
+}
+
 .row {
     display: flex;
     flex-wrap: wrap;
@@ -14,7 +23,7 @@
     display: block;
     height: auto;
     margin: auto;
-    margin-top: 150px;
+    margin-top: 50%;
 }
 
 .animasi-container {
@@ -22,20 +31,20 @@
     margin: auto;
 }
 
-.container-form {
-    flex: 70%;
-    min-height: 100vh;
-    justify-content: center;
-    align-items: center;
-
+header {
+    display: block;
+    text-align: center;
+}
+.login-page h2{
+    margin-top: 30px;
+    margin-bottom: 10px;
 }
 
 .form-parent {
-    min-height: 100vh;
+    height: 100vh;
     min-width: 100vh;
-    background: linear-gradient(to right, rgba(13, 153, 255, .4), #5EBECE, #0d99ff);
     text-align: center;
-    padding: 80px;
+    padding: 40px;
     box-shadow: 7px 7px 5px rgba(0, 0, 0, 0.4);
 }
 
@@ -46,9 +55,10 @@
 
 .btn-auth {
     padding: 10px 20px;
-    margin-bottom: 15px;
+    margin-top: 15px;
+    margin-bottom: 30px;
     border: none;
-    border-radius: 10px;
+    border-radius: 5px;
     background-color: white;
     color: black;
 }
@@ -57,6 +67,7 @@
     padding-top: 25px;
     display: flex;
     flex-direction: column;
+    font-family: 'Vesper Libre';
 }
 
 .wrap-input {
@@ -71,11 +82,15 @@
     color: red;
 }
 
+.form-input label {
+    font-size: 15px;
+}
+
 .form-input input,
 textarea,
 button {
     padding: 20px;
-    background-color: var(--nav-background-color);
+    background-color: white;
     color: white;
     border: none;
     border-radius: 10px;
@@ -83,12 +98,11 @@ button {
 
 .form-input input::placeholder,
 textarea::placeholder {
-    color: rgb(247, 243, 243);
+    color: var(--black);
 }
 
 hr {
-    margin-bottom: 20px;
-    color: black;
+    border: .5px solid black;
 }
 
 .header-logo {
@@ -100,11 +114,20 @@ hr {
     width: 100px;
     height: 100px;
 }
+
 .logo {
     max-width: 100%;
     height: auto;
 }
+.footer-form {
+    font-family: 'Vesper Libre';
+    text-align: center;
+    margin-top: 25px;
 
+}
+span{
+    font-weight: 800;
+}
 @media screen and (max-width: 1200px) {
     .side {
         flex: 30%;
@@ -112,9 +135,8 @@ hr {
         padding: 20px;
     }
 
-    .container-form {
+    .login-page {
         flex: 70%;
-        min-height: 100vh;
         width: 100vh;
         justify-content: center;
         align-items: center;
@@ -122,30 +144,31 @@ hr {
     }
 }
 
-@media (max-width: 756px) {
-    .side img {
+@media (max-width: 726px) and (min-width: 476px) {
+    .side {
         display: none;
     }
 
-    .row {
-        flex-direction: column;
-    }
-
-    .header-logo {
-        padding: 24px 0 9px;
+    .login-page {
+        flex: 100%;
+        height: 100vh;
+        justify-content: center;
+        align-items: center;
     }
 }
 
-@media screen and (max-width: 476px) {
-    .side img {
+@media (max-width: 1031px) {
+    .side {
         display: none;
     }
-}
 
-@media screen and (max-width: 640px) {
-    .side img {
-        display: none;
+    .login-page {
+        flex: 100%;
+        min-height: 100vh;
+        min-width: 500px;
+        justify-content: center;
+        align-items: center;
+
     }
+
 }
-
-
