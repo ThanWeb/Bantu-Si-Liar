@@ -137,7 +137,8 @@ span{
 
     .login-page {
         flex: 70%;
-        width: 100vh;
+        min-height:100vh;
+        min-width: 100vh;
         justify-content: center;
         align-items: center;
 
