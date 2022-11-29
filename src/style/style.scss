@@ -1,13 +1,19 @@
 @import './reset/reset.scss';
-@import './register.scss';
+@import './section/register.scss';
 @import './section/header.scss';
 @import './section/main.scss';
 
+@import url('https://fonts.googleapis.com/css2?family=Barlow&family=Rubik&display=swap');
+
 body {
-    font-family: 'Courier New', Courier, monospace;
     background: linear-gradient(
       to right,
       rgba(76, 161, 175, 1),
       rgba(196, 224, 229, 1)
     );
+}
+
+body, input, textarea, button {
+  font-size: 14px;
+  font-family: 'Rubik', 'Barlow', sans-serif;
 }
