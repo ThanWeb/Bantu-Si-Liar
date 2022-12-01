@@ -1,7 +1,7 @@
 import React from 'react'
 import { useNavigate } from 'react-router-dom'
 import Register from '../component/Register'
-import logo from '../img/LogoBantu.png'
+import logo from '../../public/Logo.png'
 
 function RegisterPage () {
     const navigate = useNavigate()
