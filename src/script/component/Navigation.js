@@ -8,6 +8,7 @@ function Navigation () {
             <Link to='register'>Register</Link>
             <Link to='login'>Login</Link>
             <Link to='profile'>Profile</Link>
+            <Link to='article'>Article</Link>
         </nav>
     )
 }
