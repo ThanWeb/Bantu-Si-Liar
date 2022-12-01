@@ -5,6 +5,7 @@ import HomePage from './page/HomePage'
 import ProfilePage from './page/ProfilePage'
 import LoginPage from './page/LoginPage'
 import RegisterPage from './page/RegisterPage'
+import AddReportPage from './page/AddReportPage'
 
 function App () {
     return (
@@ -18,6 +19,7 @@ function App () {
                     <Route path='/login' element={<LoginPage />} />
                     <Route path='/register' element={<RegisterPage />} />
                     <Route path='/profile' element={<ProfilePage />} />
+                    <Route path='/add-report' element={<AddReportPage />} />
                 </Routes>
             </main>
             <footer>
