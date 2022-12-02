@@ -27,25 +27,32 @@ h2 {
 
 table {
     border-collapse: collapse;
-    margin: 25px 0;
+    margin: 2px 0;
     font-size: 0.9em;
     font-family: sans-serif;
     min-width: 400px;
-    box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+    
+    display: flex;
+    flex-wrap: wrap;
 }
+
 table th,
 table td {
-    padding: 12px 15px;
-}
-table thead tr {
-    color: #ffffff;
-    text-align: left;
+    margin: 2px auto;
+    padding: 10px 2px;
+    width: 80%;
 }
 
+table thead tr {
+    color: black;
+    font-weight: 400;
+    text-align: left;
+    
+}
 
 .input-add-report {
-    margin: 20px auto;
-    padding: 10px;
+    margin: 10px auto;
+    padding: 12px;
     text-align: justify;
     font-family: 'Vesper Libre';
     display: flex;
@@ -53,57 +60,75 @@ table thead tr {
     flex-wrap: wrap;
     justify-content: center;
 }
-
-.data {
-    display: flex;
-    flex-direction: column;
-    gap: 5px;
-    width: 100%;
-
-    .wrap-input {
-        text-align: start;
-        margin-top: 15px;
-        margin-bottom: 20px;
-        display: flex;
-        flex-direction: column;
-    }
-}
-
-h2 {
-    font-size: 20px;
-    text-align: center;
-}
-
-.input-register label {
+.input-add-report label {
     font-size: 15px;
 }
+.input-add-report textarea {
+    font-size: 15px;
+   color: black;
+}
 
-.input-register input,
+.input-add-report input,
 select {
-    padding: 5px;
+    padding: 10px;
     border: none;
     border-radius: 5px;
 }
 
-.input-register,
+.input-add-report,
 .address {
     min-height: 50px;
     outline: none;
     word-wrap: break-word;
     word-break: break-all;
 }
+.data {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    width: 100%;
+}
+
+.wrap-input {
+    text-align: start;
+    margin-left: 10px;
+    margin-top: 15px;
+    margin-bottom: 20px;
+    display: flex;
+    flex-direction: column;
+}
+.wrap-input-desc {
+    text-align: start;
+    margin-left: 10px;
+    margin-top: 15px;
+    margin-bottom: 20px;
+    display: flex;
+    flex-direction: column;
+}
+
+input::placeholder,
+textarea::placeholder {
+  opacity: 1; /* Firefox */
+  color: hsl(212, 8%, 59%);
+}
+h2 {
+    font-size: 20px;
+    text-align: center;
+}
+
+
 
 button {
     background-color: rgb(48, 94, 143);
     margin-top: 5px;
-    margin-right: 25%;
-    margin-left: 25%;
+    margin-right: 10%;
+    margin-left: 10%;
     justify-content: center;
     align-content: center;
 }
 
-.btn-daftar {
-    width: 50%;
+.btn-add {
+    width: 100%;
     padding: 5px;
     color: #fff;
     border: none;
@@ -124,8 +149,8 @@ button {
 }
 
 @media screen and (min-width:768px) {
-    .input-register {
-        gap: 20px;
+    .input-add-report {
+        gap: 35px;
     }
 
     .data {
@@ -158,11 +183,11 @@ button {
         max-width: 500px;
     }
 
-    .input-register label {
+    .input-add-report label {
         font-size: 18px;
     }
 
-    .input-register input,
+    .input-add-report input,
     select {
         padding: 8px;
         border: none;
@@ -175,5 +200,9 @@ button {
         height: 40px;
         font-size: 15px;
     }
+ .wrap-input-desc{
+    grid-column: span 2;
+    display: inline-block;
 
+}
 }
