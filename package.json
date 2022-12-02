@@ -28,6 +28,7 @@
         "file-loader": "^6.2.0",
         "html-webpack-plugin": "^5.5.0",
         "http-server": "^14.1.1",
+        "react-icons": "^4.7.1",
         "sass": "^1.56.1",
         "sass-loader": "^13.2.0",
         "style-loader": "^3.3.1",
