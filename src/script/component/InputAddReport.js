@@ -4,7 +4,7 @@ import { useNavigate } from 'react-router-dom'
 import http from '../utils/http'
 // import PropTypes from 'prop-types'
 
-function InputAddReport () {
+function InputAddReport() {
     const navigate = useNavigate()
 
     const [data, setData] = useInput({
@@ -60,59 +60,55 @@ function InputAddReport () {
     }
 
     return (
-        <table >
-            <form onSubmit={onSubmitForm} >
-                <tr>
-                    <td>
-                        <label>Species</label>
-                    </td>
-                    <td><input
-                        type="text"
-                        name="species"
-                        value={data.species}
-                        onChange={handleInput}
-                        placeholder="species"
-                        required
-                    /></td>
-                </tr>
-                <tr>
-                    <td>
-                        <label>Color</label>
-                    </td>
-                    <input
-                        type="text"
-                        name="color"
-                        value={data.color}
-                        onChange={handleInput}
-                        placeholder="color"
-                        required
-                    />
-                </tr>
-                <div className="wrap-input">
-                    <label>Special Features</label>
-                    <textarea
-                        type="text"
-                        name="special_features"
-                        value={data.special_features}
-                        onChange={handleInput}
-                        placeholder="special features"
-                        required
-                    />
-                </div>
-                <div className="wrap-input">
-                    <label>Location</label>
-                    <textarea
-                        type="text"
-                        name="location"
-                        value={data.location}
-                        onChange={handleInput}
-                        placeholder="location"
-                        required
-                    />
-                </div>
-                <section className='data'>
-                    <div className="wrap-input">
-                        <label>Date</label>
+        <form onSubmit={onSubmitForm} className='input-add-report'>
+            <table >
+                <thead>
+                    <tr>
+                        <td><label>Species</label></td>
+                        <td><input
+                            type="text"
+                            name="species"
+                            value={data.species}
+                            onChange={handleInput}
+                            placeholder="species"
+                            required
+                        /></td>
+                    </tr>
+                    <tr>
+                        <td><label>Color</label></td>
+                        <input
+                            type="text"
+                            name="color"
+                            value={data.color}
+                            onChange={handleInput}
+                            placeholder="color"
+                            required
+                        />
+                    </tr>
+                    <tr>
+                        <td><label>Special Features</label></td>
+                        <textarea
+                            type="text"
+                            name="special_features"
+                            value={data.special_features}
+                            onChange={handleInput}
+                            placeholder="special features"
+                            required
+                        />
+                    </tr>
+                    <tr>
+                        <td><label>Location</label></td>
+                        <textarea
+                            type="text"
+                            name="location"
+                            value={data.location}
+                            onChange={handleInput}
+                            placeholder="location"
+                            required
+                        />
+                    </tr>
+                    <tr>
+                        <td><label>Date</label></td>
                         <input
                             type="text"
                             name="date"
@@ -121,32 +117,35 @@ function InputAddReport () {
                             placeholder="date"
                             required
                         />
+                    </tr>
+                    <tr>
+                        <td><label>Animal Image</label></td>
+                        <input
+                            type="file"
+                            name="animal_img"
+                            onChange={handleFile}
+                            placeholder="File"
+                            required
+                        />
+                    </tr>
+                    <tr>
+                        <td><label>Description</label></td>
+                        <textarea
+                            type="text"
+                            name="animal_description"
+                            value={data.animal_description}
+                            onChange={handleInput}
+                            placeholder="animal description"
+                            required
+                        />
+                    </tr>
+                    <div className='button-container'>
+                        <button type="submit" className="btn-add">Add Report</button>
                     </div>
-                    <label>Animal Image</label>
-                    <input
-                        type="file"
-                        name="animal_img"
-                        onChange={handleFile}
-                        placeholder="File"
-                        required
-                    />
-                </section>
-                <section className='data'>
-                    <label>Description</label>
-                    <textarea
-                        type="text"
-                        name="animal_description"
-                        value={data.animal_description}
-                        onChange={handleInput}
-                        placeholder="animal description"
-                        required
-                    />
-                </section>
-                <div className='button-container'>
-                    <button type="submit" className="btn-add">Add Report</button>
-                </div>
-            </form >
-        </table >
+
+                </thead>
+            </table >
+        </form >
     )
 }
 
