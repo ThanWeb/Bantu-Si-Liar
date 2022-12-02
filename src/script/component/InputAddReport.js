@@ -2,7 +2,6 @@ import React, { useState } from 'react'
 import useInput from '../hooks/useInput'
 import { useNavigate } from 'react-router-dom'
 import http from '../utils/http'
-// import PropTypes from 'prop-types'
 
 function InputAddReport () {
     const navigate = useNavigate()
