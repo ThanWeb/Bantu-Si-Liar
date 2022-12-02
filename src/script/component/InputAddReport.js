@@ -2,8 +2,9 @@ import React, { useState } from 'react'
 import useInput from '../hooks/useInput'
 import { useNavigate } from 'react-router-dom'
 import http from '../utils/http'
+// import PropTypes from 'prop-types'
 
-function InputAddReport () {
+function InputAddReport() {
     const navigate = useNavigate()
 
     const [species, onSpeciesChange] = useInput()
@@ -50,96 +51,100 @@ function InputAddReport () {
 
     return (
         <>
-            <form onSubmit={onSubmitForm} className='input-add-report'>
-                <table className='data'>
-                    <thead>
-                        {loading && <tr><td>loading...</td></tr>}
-                        <tr>
-                            <td><label>Species</label></td>
-                            <input
+            <form onSubmit={onSubmitForm} className='container-add-report'>
+                <section className='data'>
+                    <div className="input-row">
+                        <div className="input-col" style={{ width: '150px' }}>Species</div>
+                        <div className="input-prop">
+                            <input className="input-wrapper"
                                 type="text"
                                 name="species"
-                                className="wrap-input"
                                 value={species}
                                 onChange={onSpeciesChange}
                                 placeholder="species"
                                 required />
-                        </tr>
-                        <tr>
-                            <td><label>Color</label></td>
-                            <input
+                        </div>
+                    </div>
+                    <div className="input-row">
+                        <div className="input-col" style={{ width: '150px' }}>Color</div>
+                        <div className="input-prop">
+                            <input className="input-wrapper"
                                 type="text"
                                 name="color"
-                                className="wrap-input"
                                 value={color}
                                 onChange={onColorChange}
                                 placeholder="color"
                                 required />
-                        </tr>
-                        <tr>
-                            <td><label>Special Features</label></td>
-                            <textarea
+                        </div>
+                    </div>
+                    <div className="input-row">
+                        <div className="input-col" style={{ width: '150px' }}>Special Features</div>
+                        <div className="input-prop">
+                            <textarea className="input-wrapper"
                                 type="text"
                                 name="special_features"
-                                className="wrap-input"
                                 value={specialFeatures}
                                 onChange={onFeaturesChange}
                                 placeholder="special features"
                                 required />
-                        </tr>
-                        <tr>
-                            <td><label>Location</label></td>
-                            <textarea
+                        </div>
+                    </div>
+                    <div className="input-row">
+                        <div className="input-col" style={{ width: '150px' }}>Location</div>
+                        <div className="input-prop">
+                            <textarea className="input-wrapper"
                                 type="text"
                                 name="location"
-                                className="wrap-input"
                                 value={location}
                                 onChange={onLocationChange}
                                 placeholder="location"
                                 required />
-                        </tr>
-                        <tr>
-                            <td><label>Description</label></td>
-                            <textarea
+                        </div>
+                    </div>
+                    <div className="input-row">
+                        <div className="input-col" style={{ width: '150px' }}>Description</div>
+                        <div className="input-prop">
+                            <textarea className="input-wrapper"
                                 type="text"
                                 name="animal_description"
-                                className="wrap-input-desc"
                                 value={animalDescription}
                                 onChange={onDescriptionChange}
                                 placeholder="animal description"
                                 required />
-                        </tr>
-                    </thead>
-                </table>
-                <table className='data'>
-                    <thead>
-                        <tr>
-                            <td><label>Date</label></td>
-                            <input
+                        </div>
+                    </div>
+                </section>
+
+                <section className='data'>
+                    <div className="input-row">
+                        <div className="input-col" style={{ width: '150px' }}>Date</div>
+                        <div className="input-prop">
+                            <input className="input-wrapper"
                                 type="text"
                                 name="date"
-                                className="wrap-input"
                                 value={date}
                                 onChange={onDateChange}
                                 placeholder="date"
                                 required />
-                        </tr>
-                        <tr>
-                            <td><label>Animal Image</label></td>
-                            <input
+                        </div>
+                    </div>
+                    <div className="input-row">
+                        <div className="input-col" style={{ width: '150px' }}>Animal Image</div>
+                        <div className="input-prop">
+                            <input className="input-wrapper"
                                 type="file"
                                 name="animal_img"
-                                className="wrap-input"
                                 onChange={handleFile}
                                 placeholder="File"
                                 required />
-                        </tr>
-                    </thead>
-                </table>
+                        </div>
+                    </div>
+                </section>
+                <div className='button-container'>
+                    <button type="submit" className="btn-add">Add Report</button>
+                </div>
 
-            </form><div className='button-container'>
-                <button type="submit" className="btn-add">Add Report</button>
-            </div>
+            </form>
         </>
     )
 }
