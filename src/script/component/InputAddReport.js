@@ -1,8 +1,12 @@
 import React from 'react'
 import useInput from '../hooks/useInput'
+import { useNavigate } from 'react-router-dom'
+import http from '../utils/http'
 // import PropTypes from 'prop-types'
 
-function InputAddReport() {
+function InputAddReport () {
+    const navigate = useNavigate()
+
     const [data, setData] = useInput({
         species: '',
         color: '',
@@ -12,6 +16,7 @@ function InputAddReport() {
         date: '',
         animal_img: ''
     })
+
     // handle input
     const handleInput = (e) => {
         e.preventDefault()
@@ -36,10 +41,27 @@ function InputAddReport() {
         formData.append('animal_description', data.animal_description)
         formData.append('date', data.date)
         console.log(formData)
+
+        const req = await http.post('/user', formData)
+        if (req.data.status) {
+            alert('Data berhasil ditambahkan')
+            navigate('/homepage')
+            setData({
+                ...data,
+                species: '',
+                color: '',
+                special_features: '',
+                location: '',
+                animal_description: '',
+                date: '',
+                animal_img: ''
+            })
+        }
     }
+
     return (
         <table >
-            <form onSubmit={onSubmitForm} className="input-add-report">
+            <form onSubmit={onSubmitForm} >
                 <tr>
                     <td>
                         <label>Species</label>
