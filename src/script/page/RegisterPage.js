@@ -13,7 +13,7 @@ function RegisterPage () {
     return (
         <section className='register-page'>
             <header>
-                <img src='favicon.png' alt='Logo Bantu Si Liar'></img>
+                <img src='logo.png' alt='Logo Bantu Si Liar'></img>
                 <h1>SELAMAT DATANG</h1>
             </header>
             <Register Register={onRegisterHandler}/>
