@@ -12,10 +12,10 @@ function RegisterPage () {
     }
     return (
         <section className='register-page'>
-            <div className='header'>
+            <header>
                 <img src='favicon.png' alt='Logo Bantu Si Liar'></img>
                 <h1>SELAMAT DATANG</h1>
-            </div>
+            </header>
             <Register Register={onRegisterHandler}/>
         </section>
 

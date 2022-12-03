@@ -9,7 +9,7 @@ import RegisterPage from './page/RegisterPage'
 function App () {
     return (
         <div>
-            <header>
+            <header className="nav-container">
                 <Navigation />
             </header>
             <main>

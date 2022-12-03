@@ -1,7 +1,7 @@
 @import '../mixin/mixin.scss';
 @import '../variable/variable.scss';
 
-header {
+header.nav-container {
     @include sticky-elemen();
     height: $top-gap;
 }
