@@ -12,11 +12,11 @@ function RegisterPage () {
         }
     }
     return (
-        <section className='page-register'>
-            <header>
+        <section className='register-page'>
+            <div className='header'>
                 <img src={logo} alt='Logo Bantu Si Liar'></img>
                 <h1>SELAMAT DATANG</h1>
-            </header>
+            </div>
             <Register Register={onRegisterHandler}/>
         </section>
 
