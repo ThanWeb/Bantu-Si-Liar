@@ -100,7 +100,7 @@ const Register = ({ register }) => {
 }
 
 Register.propTypes = {
-    register: PropTypes.func.isRequired
+    register: PropTypes.func
 }
 
 export default Register
