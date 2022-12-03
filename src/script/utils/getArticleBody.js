@@ -17,6 +17,9 @@ const getArticleBody = (body) => {
         }
     }
 
+    arrayOfText.tags.push('p')
+    arrayOfText.contents.push(temp)
+
     return arrayOfText
 }
 
