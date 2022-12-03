@@ -12,7 +12,7 @@ const RegisterForm = ({ register }) => {
     const [username, setUsername] = useInput()
     const [email, setEmail] = useInput()
     const [password, setPassword] = useInput()
-    const [profile, setProfile] = useState('')
+    const [profile, setProfile] = useState('https://img.icons8.com/material-sharp/96/null/user.png')
     const [name, setName] = useInput()
     const [phone, setPhone] = useInput()
     const [province, setProvince] = useInput('- Please Select -')
@@ -102,10 +102,7 @@ const RegisterForm = ({ register }) => {
                     <input id='address' type='text' className='address' value={address} onChange={setAddress} required />
                 </div>
                 <div>
-                    {
-                        profile !== '' &&
-                            <img src={profile} alt={'Selected Picture'} />
-                    }
+                    <img src={profile} alt={'Selected Picture'} />
                     <span onClick={showPictureOption}>Choose Picture</span>
                     <div className='hidden picture-list' id='picture-list'>
                         {
