@@ -1,23 +1,27 @@
 import React from 'react'
 import { useNavigate } from 'react-router-dom'
-import Register from '../component/Register'
+import RegisterForm from '../component/RegisterForm'
+import { register } from '../utils/network-data'
 
 function RegisterPage () {
     const navigate = useNavigate()
     async function onRegisterHandler (user) {
-        const { error } = await Register(user)
+        const { error } = await register(user)
         if (!error) {
-            navigate('/')
+            navigate('/login')
         }
     }
+
     return (
-        <section className='register-page'>
-            <header>
-                <img src='logo.png' alt='Logo Bantu Si Liar'></img>
-                <h1>SELAMAT DATANG</h1>
-            </header>
-            <Register Register={onRegisterHandler}/>
-        </section>
+        <div className='register-page'>
+            <div className='container'>
+                <header>
+                    <img src='logo.png' className='logo' alt='Logo Bantu Si Liar'></img>
+                    <h1>WELCOME</h1>
+                </header>
+                <RegisterForm register={onRegisterHandler}/>
+            </div>
+        </div>
 
     )
 }

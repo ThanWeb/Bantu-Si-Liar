@@ -1,18 +1,16 @@
 import React, { useState, useEffect } from 'react'
 import PropTypes from 'prop-types'
 import useInput from '../hooks/useInput'
-import { useNavigate } from 'react-router-dom'
 import STATIC from '../globals/static-data'
 import showPictureOption from '../utils/show-picture-option'
 
 const RegisterForm = ({ register }) => {
-    const navigate = useNavigate()
     const [cityOption, setCityOption] = useState([])
 
     const [username, setUsername] = useInput()
     const [email, setEmail] = useInput()
     const [password, setPassword] = useInput()
-    const [profile, setProfile] = useState('https://img.icons8.com/material-sharp/96/null/user.png')
+    const [picture, setPicture] = useState('https://img.icons8.com/material-sharp/96/null/user.png')
     const [name, setName] = useInput()
     const [phone, setPhone] = useInput()
     const [province, setProvince] = useInput('- Please Select -')
@@ -24,8 +22,7 @@ const RegisterForm = ({ register }) => {
     }, [province])
 
     const onSubmitHandler = () => {
-        register({ username, email, password, profile, name, phone, province, city, address })
-        navigate('/')
+        register({ username, email, password, picture, name, phone, province, city, address })
     }
 
     const changeCityOption = () => {
@@ -46,8 +43,8 @@ const RegisterForm = ({ register }) => {
         setCity(city)
     }
 
-    const setPicture = (picture) => {
-        setProfile(picture)
+    const changePicture = (picture) => {
+        setPicture(picture)
     }
 
     return (
@@ -102,12 +99,12 @@ const RegisterForm = ({ register }) => {
                     <input id='address' type='text' className='address' value={address} onChange={setAddress} required />
                 </div>
                 <div>
-                    <img src={profile} alt={'Selected Picture'} />
+                    <img src={picture} alt={'Selected Picture'} />
                     <span onClick={showPictureOption}>Choose Picture</span>
                     <div className='hidden picture-list' id='picture-list'>
                         {
                             STATIC.profilePicture.map((picture, index) =>
-                                <img key={index} className='picture-option' src={picture} alt={`Picture ${index + 1}`} onClick={() => setPicture(picture)} />
+                                <img key={index} className='picture-option' src={picture} alt={`Picture ${index + 1}`} onClick={() => changePicture(picture)} />
                             )
                         }
                     </div>
