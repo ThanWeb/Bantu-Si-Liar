@@ -1,7 +1,6 @@
 import React from 'react'
 import { useNavigate } from 'react-router-dom'
 import Register from '../component/Register'
-import logo from '../img/LogoBantu.png'
 
 function RegisterPage () {
     const navigate = useNavigate()
@@ -14,7 +13,7 @@ function RegisterPage () {
     return (
         <section className='register-page'>
             <div className='header'>
-                <img src={logo} alt='Logo Bantu Si Liar'></img>
+                <img src='favicon.png' alt='Logo Bantu Si Liar'></img>
                 <h1>SELAMAT DATANG</h1>
             </div>
             <Register Register={onRegisterHandler}/>
