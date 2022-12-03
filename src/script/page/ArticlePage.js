@@ -1,8 +1,9 @@
 import React, { useState, useEffect } from 'react'
 import axios from 'axios'
+import '../../style/section/article.scss'
 
 function ArticlePage () {
-    const [articles, setArticles] = useState([10])
+    const [articles, setArticles] = useState([])
     useEffect(() => {
         retrieveArticle()
     }, [])
@@ -18,24 +19,25 @@ function ArticlePage () {
     }
 
     return (
-        <section>
+        <section id="article">
             <h1>Article Recommendations</h1>
-            {articles && articles.map((artikel) => {
-                return (
-                    <div className="article-item" key={artikel.id}>
-                        <img className="picture" src={artikel.picture} />
-                        <h2 className="title">{artikel.title}</h2>
-                        <p className="writer">{artikel.writer}</p>
-                        <p className="date">{artikel.created}</p>
-                        <p className="date">{artikel.updated}</p>
-                        <p className="thumbnail">{artikel.thumbnail}</p>
-                        <p className="body">{artikel.body}</p>
-                    </div>
-                )
-            })}
-            {/* {JSON.stringify(articles)} */}
-            {/* <p>{articles}</p> */}
-            {/* <ArticleList articles={articles} /> */}
+            <div className="article-list">
+                {articles && articles.map((artikel) => {
+                    return (
+                        <div className="article-item" key={artikel.id}>
+                            <img className="picture" src={artikel.picture} alt={artikel.title}/>
+                            <div className="article-item-detail">
+                                <a href='/#/detail/{id}' className="title">{artikel.title}</a>
+                                <p className="writer">Penulis : {artikel.writer}</p>
+                                <p className="date">Diterbitkan : {artikel.created}</p>
+                                <p className="date">Diperbarui : {artikel.updated}</p>
+                                <p className="thumbnail">{artikel.thumbnail}</p>
+                                <p className="body">{artikel.body}</p>
+                            </div>
+                        </div>
+                    )
+                })}
+            </div>
         </section>
     )
 }
