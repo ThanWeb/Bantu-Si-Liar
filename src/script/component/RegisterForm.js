@@ -3,6 +3,7 @@ import PropTypes from 'prop-types'
 import useInput from '../hooks/useInput'
 import { useNavigate } from 'react-router-dom'
 import paginationSlider from '../utils/pagination-slider'
+import STATIC from '../globals/static-data'
 
 const RegisterForm = ({ register }) => {
     const navigate = useNavigate()
@@ -28,16 +29,16 @@ const RegisterForm = ({ register }) => {
     }
 
     const getPagination = () => {
-        const currentPagination = localStorage.getItem('pagination') || 'next'
+        const currentPagination = sessionStorage.getItem('pagination') || 'prev'
         togglePagination(currentPagination)
-        localStorage.setItem('pagination', currentPagination)
+        sessionStorage.setItem('pagination', currentPagination)
     }
 
     const setPagination = () => {
-        const prevPagination = localStorage.getItem('pagination')
+        const prevPagination = sessionStorage.getItem('pagination')
         const newPagination = prevPagination === 'next' ? 'prev' : 'next'
         togglePagination(newPagination)
-        localStorage.setItem('pagination', newPagination)
+        sessionStorage.setItem('pagination', newPagination)
         paginationSlider()
     }
 
@@ -58,7 +59,7 @@ const RegisterForm = ({ register }) => {
                 </div>
                 <div>
                     <span onClick={setPagination}>
-                        {pagination === 'next' ? 'NEXT' : 'PREV'}
+                        {pagination === 'next' ? 'PREV' : 'NEXT'}
                     </span>
                 </div>
             </div>
@@ -73,7 +74,13 @@ const RegisterForm = ({ register }) => {
                 </div>
                 <div>
                     <label htmlFor="province">Provinsi</label>
-                    <select type='select' value={province} onChange={onProvinceChange} required />
+                    <select type='select' value={province} onChange={onProvinceChange} required>
+                        {
+                            STATIC.PROVINCE.map((province, index) =>
+                                <option key={index}>{ province }</option>
+                            )
+                        }
+                    </select>
                 </div>
                 <div>
                     <label htmlFor="city">Kabupaten/Kota</label>
@@ -88,7 +95,7 @@ const RegisterForm = ({ register }) => {
                     <select type='url' value={profile} onChange={onProfileChange} required />
                 </div>
                 <div>
-                    <span onClick={setPagination}>{pagination === 'next' ? 'NEXT' : 'PREV'}</span>
+                    <span onClick={setPagination}>{pagination === 'next' ? 'PREV' : 'NEXT'}</span>
                     <button type='submit' className='btn-daftar'>SIGN UP</button>
                 </div>
             </div>
