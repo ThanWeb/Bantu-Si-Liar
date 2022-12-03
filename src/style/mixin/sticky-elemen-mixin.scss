@@ -1,0 +1,16 @@
+@mixin sticky-elemen ($y-pos: top, $x-pos: left) {
+    position: fixed;
+    width: 100%;
+
+    @if $y-pos == top {
+        top: 0;
+    } @else {
+        bottom: 0;
+    }
+
+    @if $x-pos == left {
+        left: 0;
+    } @else {
+        right: 0;
+    }
+}

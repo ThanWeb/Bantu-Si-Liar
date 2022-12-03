@@ -1,0 +1,23 @@
+@mixin tablet {
+    @media screen and (min-width: $screen-tablet) {
+        @content;
+    }
+}
+
+@mixin desktop {
+    @media screen and (min-width: $screen-desktop) {
+        @content;
+    }
+}
+  
+@mixin large-desktop {
+    @media screen and (min-width: $screen-large-desktop) {
+        @content;
+    }
+}
+
+@mixin extra-large-desktop {
+    @media screen and (min-width: $screen-extra-large-desktop) {
+        @content;
+    }
+}
