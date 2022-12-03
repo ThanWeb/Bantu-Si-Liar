@@ -153,6 +153,18 @@ const STATIC = {
             province: 'Papua Barat Daya',
             cities: ['Kabupaten Maybrat', 'Kabupaten Raja Ampat', 'Kabupaten Sorong', 'Kabupaten Sorong Selatan', 'Kabupaten Tambrauw', 'Kota Sorong']
         }
+    ],
+    profilePicture: [
+        'https://img.icons8.com/color/48/null/circled-user-male-skin-type-4--v1.png',
+        'https://img.icons8.com/color/48/null/circled-user-female-skin-type-4--v1.png',
+        'https://img.icons8.com/color/48/null/sloth.png',
+        'https://img.icons8.com/color/48/null/wolf.png',
+        'https://img.icons8.com/color/48/null/giraffe.png',
+        'https://img.icons8.com/color/48/null/lemur.png',
+        'https://img.icons8.com/color/48/null/pug.png',
+        'https://img.icons8.com/color/48/null/cat-head.png',
+        'https://img.icons8.com/color/48/null/south-dakota-state-bird.png',
+        'https://img.icons8.com/color/48/null/fish.png'
     ]
 }
 
