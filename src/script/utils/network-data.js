@@ -20,9 +20,7 @@ const register = async ({ username, email, password, picture, name, phone, provi
     })
 
     const responseJson = await response.json()
-
-    alert(responseJson.message)
-    return { error: responseJson.error }
+    return { error: responseJson.error, message: responseJson.message }
 }
 
 export { register }
