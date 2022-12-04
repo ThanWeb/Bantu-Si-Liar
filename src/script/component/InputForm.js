@@ -3,42 +3,40 @@ import useInput from '../hooks/useInput'
 import PropTypes from 'prop-types'
 
 const InputForm = ({ login }) => {
-    const [email, handleEmailChange] = useInput('')
+    const [identifier, handleIdentifierChange] = useInput('')
     const [password, handlePasswordChange] = useInput('')
 
     const onSubmitHandler = (e) => {
         e.preventDefault()
         login({
-            email,
+            identifier,
             password
         })
     }
 
     return (
-        <form onSubmit={onSubmitHandler} className="form-input">
+        <form className="form-input">
             <div className="wrap-input">
-                <label>Email/Username </label>
+                <label>E-mail atau Nama User </label>
                 <input
-                    type="email"
-                    value={email}
-                    onChange={handleEmailChange}
-                    placeholder="email"
+                    type="text"
+                    value={identifier}
+                    onChange={handleIdentifierChange}
                     required
                 />
 
             </div>
             <div className="wrap-input">
-                <label>Password</label>
+                <label>Kata Sandi</label>
                 <input
                     type="password"
                     value={password}
                     onChange={handlePasswordChange}
-                    placeholder="password"
                     required
                 />
             </div>
             <div className='button-container'>
-                <button type="submit" className="btn-auth">Masuk</button>
+                <button type="submit" className="btn-auth" onClick={onSubmitHandler}>Masuk</button>
             </div>
         </form>
     )

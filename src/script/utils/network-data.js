@@ -23,8 +23,28 @@ const register = async ({ username, email, password, picture, name, phone, provi
     return { error: responseJson.error, message: responseJson.message }
 }
 
-const login = async () => {
+const login = async ({ identifier, password }) => {
+    const response = await fetch(API_ENDPOINT.LOGIN, {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({
+            identifier,
+            password
+        })
+    })
 
+    const responseJson = await response.json()
+    return { error: responseJson.error, message: responseJson.message, id: responseJson.id }
 }
 
-export { register, login }
+const getLoggedId = () => {
+    return sessionStorage.getItem('id')
+}
+
+const putLoggedId = (id) => {
+    return sessionStorage.setItem('id', id)
+}
+
+export { register, login, getLoggedId, putLoggedId }

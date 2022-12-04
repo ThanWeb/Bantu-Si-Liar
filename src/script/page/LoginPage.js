@@ -1,14 +1,24 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { Link, useNavigate } from 'react-router-dom'
 import InputForm from '../component/InputForm'
-import { login } from '../utils/network-data'
+import { login, putLoggedId } from '../utils/network-data'
+import NotificationAlert from '../component/NotificationAlert'
+import showNotification from '../utils/show-notification'
 
 function LoginPage () {
     const navigate = useNavigate()
-    const onLogin = async ({ email, password }) => {
-        const { error } = await login({ email, password })
+    const [messageText, setMessage] = useState('')
+    const [errorStatus, setError] = useState(false)
 
-        if (!error) {
+    const onLogin = async ({ identifier, password }) => {
+        const { error, message, id } = await login({ identifier, password })
+
+        if (error) {
+            setMessage(message)
+            setError(error)
+            showNotification()
+        } else {
+            putLoggedId(id)
             navigate('/')
         }
     }
@@ -29,6 +39,7 @@ function LoginPage () {
                     <span>{' '}<Link to='/register'>Daftar</Link></span>
                 </p>
             </div>
+            <NotificationAlert status={errorStatus} text={messageText}/>
         </div>
 
     )
