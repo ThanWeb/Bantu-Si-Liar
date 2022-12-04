@@ -23,4 +23,8 @@ const register = async ({ username, email, password, picture, name, phone, provi
     return { error: responseJson.error, message: responseJson.message }
 }
 
-export { register }
+const login = async () => {
+
+}
+
+export { register, login }

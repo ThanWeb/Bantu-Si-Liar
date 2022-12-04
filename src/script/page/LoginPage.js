@@ -1,8 +1,6 @@
 import React from 'react'
 import { Link, useNavigate } from 'react-router-dom'
-import InputLogin from '../component/InputLogin'
-import Logo from '../img/LogoBantu.png'
-import AnimasiLogin from '../img/animasi-login.png'
+import InputForm from '../component/InputForm'
 import { login } from '../utils/network-data'
 
 function LoginPage () {
@@ -18,14 +16,14 @@ function LoginPage () {
     return (
         <div className="row">
             <section className="side">
-                <img src={AnimasiLogin} alt="" width="50%" />
+                <img src='animasi-login.png' alt="" width="50%" />
             </section>
             <div className="login-page">
                 <header>
-                    <img className="logo" src={Logo} alt="" width="10%" />
+                    <img className="logo" src='logo-transparent.png' alt="" width="10%" />
                 </header>
                 <h2>SELAMAT DATANG KEMBALI !</h2>
-                <InputLogin login={onLogin} />
+                <InputForm login={onLogin} />
                 <hr></hr>
                 <p className='footer-form'>Belum punya akun ?
                     <span>{' '}<Link to='/register'>Daftar</Link></span>
