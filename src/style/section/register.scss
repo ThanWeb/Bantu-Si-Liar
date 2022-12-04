@@ -42,16 +42,6 @@
 		}
 	}
 
-	.notification-alert {
-		position: fixed;
-		width: 80%;
-		transition: 1s;
-		top: -50px;
-
-		&.show {
-			top: 30px;
-		}
-	}
 	// padding: 20px;
 
 	// header {
