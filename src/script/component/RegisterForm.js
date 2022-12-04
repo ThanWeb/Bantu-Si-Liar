@@ -13,8 +13,8 @@ const RegisterForm = ({ register }) => {
     const [picture, setPicture] = useState('https://img.icons8.com/material-sharp/96/null/user.png')
     const [name, setName] = useInput()
     const [phone, setPhone] = useInput()
-    const [province, setProvince] = useInput('- Please Select -')
-    const [city, setCity] = useState('- Please Select -')
+    const [province, setProvince] = useInput('')
+    const [city, setCity] = useState('')
     const [address, setAddress] = useInput()
 
     useEffect(() => {
@@ -27,7 +27,7 @@ const RegisterForm = ({ register }) => {
 
     const changeCityOption = () => {
         setCity('')
-        if (province === '- Please Select -') {
+        if (province === '') {
             setCityOption([])
         } else {
             STATIC.places.forEach(place => {
@@ -50,32 +50,32 @@ const RegisterForm = ({ register }) => {
     return (
         <form onSubmit={onSubmitHandler} className='register'>
             <div>
-                <div>
-                    <label htmlFor='username'>Username</label>
+                <div className='input-field'>
+                    <label htmlFor='username'>Nama User</label>
                     <input id='username' type='text' value={username} onChange={setUsername} required />
                 </div>
-                <div>
-                    <label htmlFor='email'>Email</label>
+                <div className='input-field'>
+                    <label htmlFor='email'>Alamat E-mail</label>
                     <input id='email' type='email' value={email} onChange={setEmail} required />
                 </div>
-                <div>
-                    <label htmlFor='password'>Password</label>
+                <div className='input-field'>
+                    <label htmlFor='password'>Kata Sandi</label>
                     <input id='password' type='password' minLength='8' autoComplete='current-password' value={password} onChange={setPassword} required />
                 </div>
             </div>
             <div>
-                <div>
-                    <label htmlFor='name'>Nama</label>
+                <div className='input-field'>
+                    <label htmlFor='name'>Nama Lengkap</label>
                     <input id='name' type='text' value={name} onChange={setName} required />
                 </div>
-                <div>
-                    <label htmlFor='phone'>No Handphone</label>
+                <div className='input-field'>
+                    <label htmlFor='phone'>Nomor Telepon</label>
                     <input id='phone' type='tel' value={phone} onChange={setPhone} required />
                 </div>
-                <div>
+                <div className='input-field'>
                     <label>Provinsi</label>
                     <select type='select' value={province} onChange={setProvince} required>
-                        <option>- Please Select -</option>
+                        <option></option>
                         {
                             STATIC.places.map((place, index) =>
                                 <option key={index}>{ place.province }</option>
@@ -83,10 +83,10 @@ const RegisterForm = ({ register }) => {
                         }
                     </select>
                 </div>
-                <div>
+                <div className='input-field'>
                     <label>Kabupaten/ Kota</label>
                     <select id='city' type='select' value={city} onChange={changeSelectedCity} required>
-                        <option>- Please Select -</option>
+                        <option></option>
                         {
                             cityOption.map((city, index) =>
                                 <option key={index}>{ city }</option>
@@ -94,11 +94,11 @@ const RegisterForm = ({ register }) => {
                         }
                     </select>
                 </div>
-                <div>
+                <div className='input-field'>
                     <label htmlFor='address'>Alamat Lengkap</label>
                     <input id='address' type='text' className='address' value={address} onChange={setAddress} required />
                 </div>
-                <div>
+                <div className='input-field'>
                     <img src={picture} alt={'Selected Picture'} />
                     <span onClick={showPictureOption}>Choose Picture</span>
                     <div className='hidden picture-list' id='picture-list'>
@@ -109,7 +109,7 @@ const RegisterForm = ({ register }) => {
                         }
                     </div>
                 </div>
-                <div>
+                <div className='input-field'>
                     <button type='submit' className='btn-daftar'>SIGN UP</button>
                 </div>
             </div>
