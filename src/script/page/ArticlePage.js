@@ -27,13 +27,11 @@ function ArticlePage () {
                         <div className="article-item" key={artikel.id}>
                             <img className="picture" src={artikel.picture} alt={artikel.title}/>
                             <div className="article-item-detail">
-                                <a href='/#/detail/{id}' className="title">{artikel.title}</a>
+                                <h2 className="title">{artikel.title}</h2>
                                 <p className="writer">Penulis : {artikel.writer}</p>
-                                <p className="date">Diterbitkan : {artikel.created}</p>
-                                <p className="date">Diperbarui : {artikel.updated}</p>
                                 <p className="thumbnail">{artikel.thumbnail}</p>
-                                <p className="body">{artikel.body}</p>
                             </div>
+                            <a href='/#/detail/{id}'>Selengkapnya...</a>
                         </div>
                     )
                 })}
