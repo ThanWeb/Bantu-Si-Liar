@@ -1,7 +1,7 @@
 import React from 'react'
 import getArticleBody from '../utils/getArticleBody'
 
-function ArticleDetailPage () {
+const ArticleDetailPage = () => {
     const arrayOfText = getArticleBody(body)
     return (
         <div>
