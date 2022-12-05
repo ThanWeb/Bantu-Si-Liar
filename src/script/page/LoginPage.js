@@ -1,11 +1,12 @@
 import React, { useState } from 'react'
 import { Link, useNavigate } from 'react-router-dom'
-import InputForm from '../component/InputForm'
+import LoginForm from '../component/LoginForm'
 import { login, putLoggedId } from '../utils/network-data'
 import NotificationAlert from '../component/NotificationAlert'
 import showNotification from '../utils/show-notification'
+import PropTypes from 'prop-types'
 
-function LoginPage () {
+function LoginPage ({ loginSuccess }) {
     const navigate = useNavigate()
     const [messageText, setMessage] = useState('')
     const [errorStatus, setError] = useState(false)
@@ -19,21 +20,22 @@ function LoginPage () {
             showNotification()
         } else {
             putLoggedId(id)
+            loginSuccess(id)
             navigate('/')
         }
     }
 
     return (
-        <div className="row">
-            <section className="side">
-                <img src='animasi-login.png' alt="" width="50%" />
+        <div className='row'>
+            <section className='side'>
+                <img src='animasi-login.png' alt='Login' />
             </section>
-            <div className="login-page">
+            <div className='login-page'>
                 <header>
-                    <img className="logo" src='logo-transparent.png' alt="" width="10%" />
+                    <img className='logo' src='logo-transparent.png' alt='Logo Bantu Si Liar'/>
                 </header>
                 <h2>SELAMAT DATANG KEMBALI !</h2>
-                <InputForm login={onLogin} />
+                <LoginForm login={onLogin} />
                 <hr></hr>
                 <p className='footer-form'>Belum punya akun ?
                     <span>{' '}<Link to='/register'>Daftar</Link></span>
@@ -43,6 +45,10 @@ function LoginPage () {
         </div>
 
     )
+}
+
+LoginPage.propTypes = {
+    loginSuccess: PropTypes.func
 }
 
 export default LoginPage

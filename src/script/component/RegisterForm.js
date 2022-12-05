@@ -51,7 +51,7 @@ const RegisterForm = ({ register }) => {
         <form onSubmit={onSubmitHandler} className='register'>
             <div>
                 <div className='input-field'>
-                    <label htmlFor='username'>Nama User</label>
+                    <label htmlFor='username'>Nama Pengguna</label>
                     <input id='username' type='text' value={username} onChange={setUsername} required />
                 </div>
                 <div className='input-field'>
@@ -99,7 +99,7 @@ const RegisterForm = ({ register }) => {
                     <input id='address' type='text' className='address' value={address} onChange={setAddress} required />
                 </div>
                 <div className='input-field'>
-                    <img src={picture} alt={'Selected Picture'} />
+                    <img src={picture} alt='Selected Picture'/>
                     <span onClick={showPictureOption}>Choose Picture</span>
                     <div className='hidden picture-list' id='picture-list'>
                         {
