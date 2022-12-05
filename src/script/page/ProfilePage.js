@@ -1,40 +1,40 @@
 import React from 'react'
+import PropTypes from 'prop-types'
 
-const ProfilePage = () => {
+const ProfilePage = ({ data }) => {
     return (
-        <div className='container'>
-            <div className='profile'>
-                <h1>Profil</h1>
-                <img src='https://cdn-icons-png.flaticon.com/512/61/61173.png' alt='icon'/>
-
-                <div className='input-profile'>
-                    <div className='card'>
-                        <label htmlFor='email'>Email</label>
-                        <input type='text' id='email' />
-                    </div>
-                    <div className='card'>
-                        <label htmlFor='username'>Username</label>
-                        <input type='text' id='username' />
-                    </div>
-                    <div className='card'>
-                        <label htmlFor='nama'>Nama</label>
-                        <input type='text' id='nama' />
-                    </div>
-                    <div className='card'>
-                        <label htmlFor='alamat'>Alamat</label>
-                        <input type='text' id='alamat' />
-                    </div>
-                    <div className='card'>
-                        <label htmlFor='noHp'>No HP</label>
-                        <input type='text' id='noHp' />
-                    </div>
-                    <div className='input_submit'>
-                        <button type='submit'>SIMPAN</button>
-                    </div>
+        <div className='profile-page'>
+            <div className='container'>
+                <div>
+                    <img src={data.picture} alt='Profile Picture'/>
+                </div>
+                <div>
+                    <span>Nama Pengguna</span>
+                    <p>{data.name}</p>
+                </div>
+                <div>
+                    <span>Nomor Telepon</span>
+                    <p>{data.phone}</p>
+                </div>
+                <div>
+                    <span>Provinsi</span>
+                    <p>{data.province}</p>
+                </div>
+                <div>
+                    <span>Kabupaten/ Kota</span>
+                    <p>{data.city}</p>
+                </div>
+                <div>
+                    <span>Alamat</span>
+                    <p>{data.address}</p>
                 </div>
             </div>
         </div>
     )
+}
+
+ProfilePage.propTypes = {
+    data: PropTypes.object
 }
 
 export default ProfilePage
