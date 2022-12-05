@@ -47,4 +47,20 @@ const putLoggedId = (id) => {
     return sessionStorage.setItem('id', id)
 }
 
-export { register, login, getLoggedId, putLoggedId }
+const removeLoggedId = () => {
+    return sessionStorage.removeItem('id')
+}
+
+const getProfile = async (id) => {
+    const response = await fetch(`${API_ENDPOINT.PROFILE}${id}`, {
+        method: 'GET',
+        headers: {
+            'Content-Type': 'application/json'
+        }
+    })
+
+    const responseJson = await response.json()
+    return { error: responseJson.error, message: responseJson.message, data: responseJson.data }
+}
+
+export { register, login, getLoggedId, putLoggedId, removeLoggedId, getProfile }
