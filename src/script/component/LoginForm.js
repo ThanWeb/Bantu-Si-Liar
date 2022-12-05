@@ -2,7 +2,7 @@ import React from 'react'
 import useInput from '../hooks/useInput'
 import PropTypes from 'prop-types'
 
-const InputForm = ({ login }) => {
+const LoginForm = ({ login }) => {
     const [identifier, handleIdentifierChange] = useInput('')
     const [password, handlePasswordChange] = useInput('')
 
@@ -17,7 +17,7 @@ const InputForm = ({ login }) => {
     return (
         <form className="form-input">
             <div className="wrap-input">
-                <label>E-mail atau Nama User </label>
+                <label>E-mail atau Nama Pengguna </label>
                 <input
                     type="text"
                     value={identifier}
@@ -42,8 +42,8 @@ const InputForm = ({ login }) => {
     )
 }
 
-InputForm.propTypes = {
+LoginForm.propTypes = {
     login: PropTypes.func.isRequired
 }
 
-export default InputForm
+export default LoginForm
