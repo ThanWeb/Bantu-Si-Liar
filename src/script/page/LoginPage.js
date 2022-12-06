@@ -21,7 +21,9 @@ function LoginPage ({ loginSuccess }) {
         } else {
             putLoggedId(id)
             loginSuccess(id)
-            navigate('/')
+            setTimeout(() => {
+                navigate('/')
+            }, 1)
         }
     }
 
