@@ -15,7 +15,7 @@ const LoginForm = ({ login }) => {
     }
 
     return (
-        <form className="form-input">
+        <form className="form-input" onSubmit={onSubmitHandler}>
             <div className="wrap-input">
                 <label>E-mail atau Nama Pengguna </label>
                 <input
@@ -36,7 +36,7 @@ const LoginForm = ({ login }) => {
                 />
             </div>
             <div className='button-container'>
-                <button type="submit" className="btn-auth" onClick={onSubmitHandler}>Masuk</button>
+                <button type="submit" className="btn-auth">Masuk</button>
             </div>
         </form>
     )
