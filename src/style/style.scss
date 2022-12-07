@@ -4,6 +4,7 @@
 @import './section/profile.scss';
 @import './section/header.scss';
 @import './section/main.scss';
+@import './section/article-list.scss';
 
 @import url('https://fonts.googleapis.com/css2?family=Barlow&family=Rubik&display=swap');
 
@@ -33,4 +34,8 @@ body, input, textarea, button, select, option {
     &.show {
         top: 30px;
     }
+}
+
+.italic-text {
+    font-style: italic;
 }
