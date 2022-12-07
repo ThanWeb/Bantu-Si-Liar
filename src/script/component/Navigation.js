@@ -9,6 +9,7 @@ const Navigation = ({ loginStatus, profileData, logout }) => {
                 <Link to='/'>Home</Link>
                 <Link to='login'>Login</Link>
                 <Link to='report'>Report</Link>
+                <Link to='article'>Article</Link>
             </nav>
         )
     }
@@ -21,6 +22,7 @@ const Navigation = ({ loginStatus, profileData, logout }) => {
                 <span>{profileData.name}</span>
             </Link>
             <Link to='report'>Report</Link>
+            <Link to='article'>Article</Link>
             <Link to='/' onClick={logout}>Log Out</Link>
         </nav>
     )
