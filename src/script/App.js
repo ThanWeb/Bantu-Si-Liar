@@ -42,9 +42,9 @@ function App () {
             <main>
                 <Routes>
                     <Route path='/' element={<HomePage />} />
-                    <Route path='login' element={<LoginPage loginSuccess={onLoginHandler}/>} />
+                    <Route path='login' element={<LoginPage loginSuccess={onLoginHandler} loginStatus={authedUser} data={profile}/>} />
                     <Route path='register' element={<RegisterPage />} />
-                    <Route path='profile' element={<ProfilePage data={profile} loginStatus={authedUser}/>} />
+                    <Route path='profile' element={<ProfilePage data={profile}/>} />
                     <Route path='report' element={<ReportPage loginStatus={authedUser}/>} />
                 </Routes>
             </main>

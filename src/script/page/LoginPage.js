@@ -1,13 +1,12 @@
 import React, { useState } from 'react'
-import { Link, useNavigate } from 'react-router-dom'
+import { Link } from 'react-router-dom'
 import LoginForm from '../component/LoginForm'
 import { login, putLoggedId } from '../utils/network-data'
 import NotificationAlert from '../component/NotificationAlert'
 import showNotification from '../utils/show-notification'
 import PropTypes from 'prop-types'
 
-function LoginPage ({ loginSuccess }) {
-    const navigate = useNavigate()
+function LoginPage ({ loginSuccess, loginStatus, data }) {
     const [messageText, setMessage] = useState('')
     const [errorStatus, setError] = useState(false)
 
@@ -21,10 +20,17 @@ function LoginPage ({ loginSuccess }) {
         } else {
             putLoggedId(id)
             loginSuccess(id)
-            setTimeout(() => {
-                navigate('/')
-            }, 1)
         }
+    }
+
+    if (loginStatus !== '') {
+        return (
+            <div className='login-page'>
+                <h3>Selamat datang, {data.name}</h3>
+                <h3>Anda telah berhasil login</h3>
+                <Link to='/'>Kembali ke Beranda</Link>
+            </div>
+        )
     }
 
     return (
@@ -50,7 +56,9 @@ function LoginPage ({ loginSuccess }) {
 }
 
 LoginPage.propTypes = {
-    loginSuccess: PropTypes.func
+    loginSuccess: PropTypes.func,
+    loginStatus: PropTypes.string,
+    data: PropTypes.object
 }
 
 export default LoginPage
