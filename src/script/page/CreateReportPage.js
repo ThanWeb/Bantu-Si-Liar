@@ -1,10 +1,9 @@
-/* eslint-disable react/react-in-jsx-scope */
 import React from 'react'
 import { Link } from 'react-router-dom'
 import InputAddReport from '../component/InputAddReport'
 import { HiArrowLeft } from 'react-icons/hi'
 
-function AddReportPage () {
+function CreateReportPage () {
     return (
         <section className="add-report-page">
             <header>
@@ -20,4 +19,4 @@ function AddReportPage () {
 
     )
 }
-export default AddReportPage
+export default CreateReportPage
