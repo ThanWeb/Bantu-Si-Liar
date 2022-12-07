@@ -1,6 +1,6 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
-import InputAddReport from '../component/InputAddReport'
+import CreateReportForm from '../component/CreateReportForm'
 import { HiArrowLeft } from 'react-icons/hi'
 
 function CreateReportPage () {
@@ -14,7 +14,7 @@ function CreateReportPage () {
                     <HiArrowLeft />{'Back'}
                 </Link>
             </h4>
-            <InputAddReport />
+            <CreateReportForm />
         </section>
 
     )
