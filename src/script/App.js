@@ -8,6 +8,7 @@ import RegisterPage from './page/RegisterPage'
 import ArticleListPage from './page/ArticleListPage'
 import ArticleDetailPage from './page/ArticleDetailPage'
 import ReportPage from './page/ReportPage'
+import AddReportPage from './page/AddReportPage'
 import { getLoggedId, getProfile, removeLoggedId } from './utils/network-data'
 
 function App () {
@@ -49,6 +50,7 @@ function App () {
                     <Route path='articles' element={<ArticleListPage />} />
                     <Route path='article-detail/:id' element={<ArticleDetailPage />} />
                     <Route path='profile' element={<ProfilePage />} />
+                    <Route path='/add-report' element={<AddReportPage />} />
                     <Route path='report' element={<ReportPage loginStatus={authedUser}/>} />
                 </Routes>
             </main>
