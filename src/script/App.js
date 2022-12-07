@@ -31,6 +31,7 @@ function App () {
 
     const onLoginHandler = (id) => {
         setAuthedUser(id)
+        location.reload()
     }
 
     const onLogoutHandler = () => {
