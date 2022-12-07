@@ -75,4 +75,16 @@ const getArticles = async () => {
     return { error: responseJson.error, message: responseJson.message, data: responseJson.data }
 }
 
-export { register, login, getLoggedId, putLoggedId, removeLoggedId, getProfile, getArticles }
+const getSingleArticle = async (id) => {
+    const response = await fetch(`${API_ENDPOINT.SINGLE_ARTICLE}${id}`, {
+        method: 'GET',
+        headers: {
+            'Content-Type': 'application/json'
+        }
+    })
+
+    const responseJson = await response.json()
+    return { error: responseJson.error, message: responseJson.message, data: responseJson.data }
+}
+
+export { register, login, getLoggedId, putLoggedId, removeLoggedId, getProfile, getArticles, getSingleArticle }

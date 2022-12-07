@@ -4,7 +4,8 @@ const API_ENDPOINT = {
     REGISTER: `${CONFIG.BASE_URL}register.php`,
     LOGIN: `${CONFIG.BASE_URL}login.php`,
     PROFILE: `${CONFIG.BASE_URL}profile.php?id=`,
-    ARTICLE_LIST: `${CONFIG.BASE_URL}list-article.php`
+    ARTICLE_LIST: `${CONFIG.BASE_URL}list-article.php`,
+    SINGLE_ARTICLE: `${CONFIG.BASE_URL}single-article.php?id=`
 }
 
 export default API_ENDPOINT
