@@ -1,10 +1,9 @@
-import React, { useState } from 'react'
+import React from 'react'
 import useInput from '../hooks/useInput'
-import { useNavigate } from 'react-router-dom'
-import http from '../utils/http'
+// import { useNavigate } from 'react-router-dom'
 
-function InputAddReport() {
-    const navigate = useNavigate()
+function InputAddReport () {
+    // const navigate = useNavigate()
 
     const [species, onSpeciesChange] = useInput()
     const [color, onColorChange] = useInput()
@@ -12,40 +11,38 @@ function InputAddReport() {
     const [location, onLocationChange] = useInput()
     const [animalDescription, onDescriptionChange] = useInput()
     const [date, onDateChange] = useInput()
-    // handle gambar
-    const [file, setFile] = useInput([])
-    const handleFile = (e) => {
-        setFile({ animal_img: e.target.files[0] })
-    }
-    const [error, setError] = useState([])
-    const [loading, setLoading] = useState(false)
+
+    // const [file, setFile] = useInput([])
+    // const handleFile = (e) => {
+    //     setFile({ animal_img: e.target.files[0] })
+    // }
 
     const onSubmitForm = async (e) => {
-        e.preventDefault()
-        const formData = new FormData()
-        formData.append('animal_img', file.animal_img)
-        formData.append('species', onSpeciesChange.species)
-        formData.append('color', onColorChange.color)
-        formData.append('special_features', onFeaturesChange.special_features)
-        formData.append('location', onLocationChange.location)
-        formData.append('animal_description', onDescriptionChange.animal_description)
-        formData.append('date', onDateChange.date)
+        // e.preventDefault()
+        // const formData = new FormData()
+        // formData.append('animal_img', file.animal_img)
+        // formData.append('species', onSpeciesChange.species)
+        // formData.append('color', onColorChange.color)
+        // formData.append('special_features', onFeaturesChange.special_features)
+        // formData.append('location', onLocationChange.location)
+        // formData.append('animal_description', onDescriptionChange.animal_description)
+        // formData.append('date', onDateChange.date)
 
-        setLoading(true)
-        setError([])
+        // setLoading(true)
+        // setError([])
 
-        try {
-            const req = await http.post('/user', formData)
-            if (req.data.status) {
-                alert('Data berhasil ditambahkan')
-                navigate('/homepage')
-            } else {
-                alert('Opss data gagal ditambahkan')
-            }
-        } catch (error) {
-            setError(error.response.data.errors)
-        }
-        setLoading(false)
+        // try {
+        //     const req = await http.post('/user', formData)
+        //     if (req.data.status) {
+        //         alert('Data berhasil ditambahkan')
+        //         navigate('/homepage')
+        //     } else {
+        //         alert('Opss data gagal ditambahkan')
+        //     }
+        // } catch (error) {
+        //     setError(error.response.data.errors)
+        // }
+        // setLoading(false)
     }
 
     return (
@@ -133,7 +130,7 @@ function InputAddReport() {
                             <input className="input-wrapper"
                                 type="file"
                                 name="animal_img"
-                                onChange={handleFile}
+                                // onChange={handleFile}
                                 placeholder="File"
                                 required />
                         </div>
