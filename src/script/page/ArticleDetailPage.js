@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react'
-import getArticleBody from '../utils/getArticleBody'
+import getArticleBody from '../utils/get-article-body'
 import { useParams } from 'react-router-dom'
 import { getSingleArticle } from '../utils/network-data'
 
