@@ -50,7 +50,7 @@ function App () {
                     <Route path='register' element={<RegisterPage />} />
                     <Route path='article-list' element={<ArticleListPage />} />
                     <Route path='article-detail/:id' element={<ArticleDetailPage />} />
-                    <Route path='profile' element={<ProfilePage />} />
+                    <Route path='profile' element={<ProfilePage data={profile}/>} />
                     <Route path='create-report' element={<CreateReportPage loginStatus={authedUser} />} />
                     <Route path='report-list' element={<ReportListPage />} />
                     <Route path='report-detail/:id' element={<ReportDetailPage />} />
