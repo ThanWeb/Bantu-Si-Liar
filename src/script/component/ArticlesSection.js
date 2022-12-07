@@ -4,19 +4,26 @@ import ArticlePreview from './ArticlePreview'
 
 const ArticlesSection = ({ articleList }) => {
     const [randomArticles, setRandomArticles] = useState([])
+    const tempArticleList = articleList
 
     useEffect(() => {
         getRandomArticles()
     }, [articleList])
 
     const getRandomArticles = () => {
-        if (articleList.length > 0) {
+        const arrayOfNumbers = []
+
+        if (tempArticleList.length > 0) {
             let article
             const temp = []
 
-            for (let i = 0; i < 3; i++) {
-                article = articleList[Math.floor(Math.random() * articleList.length)]
-                temp.push(article)
+            for (let i = 0; arrayOfNumbers.length < 3; i++) {
+                article = tempArticleList[Math.floor(Math.random() * tempArticleList.length)]
+
+                if (!arrayOfNumbers.includes(article.id)) {
+                    arrayOfNumbers.push(article.id)
+                    temp.push(article)
+                }
             }
             setRandomArticles(temp)
         }
@@ -24,7 +31,9 @@ const ArticlesSection = ({ articleList }) => {
 
     return (
         <div className='articles-section'>
-            {randomArticles.map((article, index) => <ArticlePreview key={index} articleData={article}/>)}
+            {
+                randomArticles.map((article, index) => <ArticlePreview key={index} articleData={article}/>)
+            }
         </div>
     )
 }
