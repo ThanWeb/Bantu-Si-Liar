@@ -1,22 +1,27 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 import CreateReportForm from '../component/CreateReportForm'
-import { HiArrowLeft } from 'react-icons/hi'
+import PropTypes from 'prop-types'
 
-function CreateReportPage () {
+function CreateReportPage ({ loginStatus }) {
+    if (loginStatus === '') {
+        return (
+            <div className='create-report-page'>
+                <p>Silahkan Masuk untuk dapat membuat Laporan</p>
+                <Link to='/login'>Masuk</Link>
+            </div>
+        )
+    }
+
     return (
-        <section className="add-report-page">
-            <header>
-                <h2>LAPORKAN</h2>
-            </header>
-            <h4>
-                <Link to="/">
-                    <HiArrowLeft />{'Back'}
-                </Link>
-            </h4>
+        <div className='create-report-page'>
             <CreateReportForm />
-        </section>
-
+        </div>
     )
 }
+
+CreateReportPage.propTypes = {
+    loginStatus: PropTypes.string
+}
+
 export default CreateReportPage
