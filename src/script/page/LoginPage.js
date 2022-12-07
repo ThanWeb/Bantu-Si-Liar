@@ -36,11 +36,11 @@ function LoginPage ({ loginSuccess, loginStatus, data }) {
     return (
         <div className='row'>
             <section className='side'>
-                <img src='animasi-login.png' alt='Login' />
+                <img src='public/animasi-login.png' alt='Login' />
             </section>
             <div className='login-page'>
                 <header>
-                    <img className='logo' src='logo-transparent.png' alt='Logo Bantu Si Liar'/>
+                    <img className='logo' src='public/logo-transparent.png' alt='Logo Bantu Si Liar'/>
                 </header>
                 <h2>SELAMAT DATANG KEMBALI !</h2>
                 <LoginForm login={onLogin} />

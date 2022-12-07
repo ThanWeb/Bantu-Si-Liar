@@ -4,7 +4,7 @@ const Jumbotron = () => {
     return (
         <header className='jumbotron'>
             <div>
-                <img src='jumbotron-image.png' alt='Jumbotron Image'/>
+                <img src='public/jumbotron-image.png' alt='Jumbotron Image'/>
                 <button>Laporkan</button>
             </div>
             <div>
