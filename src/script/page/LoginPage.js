@@ -28,6 +28,7 @@ const LoginPage = ({ loginSuccess, loginStatus, data }) => {
             <div className='login-page'>
                 <h3>Selamat datang, {data.name}</h3>
                 <h3>Anda telah berhasil login</h3>
+                <Link to='/create-report'>Buat Laporan</Link>
                 <Link to='/'>Kembali ke Beranda</Link>
             </div>
         )
