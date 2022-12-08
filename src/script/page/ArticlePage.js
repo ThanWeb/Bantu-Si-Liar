@@ -31,7 +31,7 @@ function ArticlePage () {
                                 <p className="writer">Penulis : {artikel.writer}</p>
                                 <p className="thumbnail">{artikel.thumbnail}</p>
                             </div>
-                            <a href='/#/detail/{id}'>Selengkapnya...</a>
+                            <a href='/#/article/detail/{id}'>Selengkapnya...</a>
                         </div>
                     )
                 })}
