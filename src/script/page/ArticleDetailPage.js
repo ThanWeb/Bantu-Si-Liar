@@ -1,8 +1,26 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
+import { useParams } from 'react-router-dom'
+import axios from 'axios'
 import getArticleBody from '../utils/getArticleBody'
 
 function ArticleDetailPage () {
-    const arrayOfText = getArticleBody(body)
+    const [detail, setDetail] = useState([])
+    const { id } = useParams()
+    useEffect(() => {
+        retrieveArticle()
+    }, [])
+
+    const retrieveArticle = async () => {
+        try {
+            const { data } = await axios.get('https://antekteknologi.my.id/api/rest-api-bantu-si-liar/api/single-article.php?id=5')
+            console.log(data.data, '<== response article')
+            setDetail(data.data)
+        } catch (error) {
+            console.log(error, '<== error retrieve article')
+        }
+    }
+
+    const arrayOfText = getArticleBody()
     return (
         <div>
             {
@@ -12,6 +30,11 @@ function ArticleDetailPage () {
             }
         </div>
     )
+
+    // return (
+    // //  {JSON.stringify(detail)}
+    //     <p>{detail}</p>
+    // )
 }
 
 export default ArticleDetailPage
