@@ -1,148 +1,176 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import useInput from '../hooks/useInput'
-// import { useNavigate } from 'react-router-dom'
+import PropTypes from 'prop-types'
+import STATIC from '../globals/static-data'
+import axios from 'axios'
+import { useNavigate } from 'react-router-dom'
+import NotificationAlert from '../component/NotificationAlert'
+import showNotification from '../utils/show-notification'
 
-const CreateReportFrom = () => {
-    // const navigate = useNavigate()
+const CreateReportForm = ({ createReport, profileData }) => {
+    const navigate = useNavigate()
+    const [cityOption, setCityOption] = useState([])
+    const [messageText, setMessage] = useState('')
+    const [errorStatus, setError] = useState(false)
 
-    const [species, onSpeciesChange] = useInput()
-    const [color, onColorChange] = useInput()
-    const [specialFeatures, onFeaturesChange] = useInput()
+    const [animal, onAnimalChange] = useInput()
+    const [status, onStatusChange] = useInput()
+    const [province, setProvince] = useInput('')
+    const [city, onCityChange] = useState('')
     const [location, onLocationChange] = useInput()
-    const [animalDescription, onDescriptionChange] = useInput()
-    const [date, onDateChange] = useInput()
+    const [color, onColorChange] = useInput()
+    const [characteristic, onCharacteristicChange] = useInput()
+    const [reporter, onReporterChange] = useInput()
+    const [phone, onPhoneChange] = useInput()
+    const [picture, onPictureChange] = useState(null)
 
-    // const [file, setFile] = useInput([])
-    // const handleFile = (e) => {
-    //     setFile({ animal_img: e.target.files[0] })
-    // }
+    const logTime = () => {
+        const days = ['Minggu', 'Senin', 'Selasa', 'Rabu', 'Kamis', 'Jum\'at', 'Sabtu']
+        const months = ['Januari', 'Februari', 'Maret', 'April', 'Mei', 'Juni', 'Juli', 'Agustus', 'September', 'Oktober', 'November', 'Desember']
+        const now = new Date()
+        const date = `${days[now.getDay()]}, ${now.getDate()} ${months[now.getMonth()]} ${now.getFullYear()}`
+        return date
+    }
 
-    const onSubmitForm = async (e) => {
-        // e.preventDefault()
-        // const formData = new FormData()
-        // formData.append('animal_img', file.animal_img)
-        // formData.append('species', onSpeciesChange.species)
-        // formData.append('color', onColorChange.color)
-        // formData.append('special_features', onFeaturesChange.special_features)
-        // formData.append('location', onLocationChange.location)
-        // formData.append('animal_description', onDescriptionChange.animal_description)
-        // formData.append('date', onDateChange.date)
+    useEffect(() => {
+        changeCityOption()
+    }, [province])
 
-        // setLoading(true)
-        // setError([])
+    const onSubmitHandler = async () => {
+        const date = logTime()
+        const formData = new FormData()
 
-        // try {
-        //     const req = await http.post('/user', formData)
-        //     if (req.data.status) {
-        //         alert('Data berhasil ditambahkan')
-        //         navigate('/homepage')
-        //     } else {
-        //         alert('Opss data gagal ditambahkan')
-        //     }
-        // } catch (error) {
-        //     setError(error.response.data.errors)
-        // }
-        // setLoading(false)
+        formData.append('animal', animal)
+        formData.append('status', status)
+        formData.append('province', province)
+        formData.append('city', city)
+        formData.append('location', location)
+        formData.append('color', color)
+        formData.append('characteristic', characteristic)
+        formData.append('reporter', reporter)
+        formData.append('phone', phone)
+        formData.append('picture', picture)
+        formData.append('date', date)
+
+        axios({
+            url: 'http://localhost/rest-api-bantu-si-liar/api/create-report.php',
+            method: 'POST',
+            headers: {
+                'Content-Type': 'multipart/form-data'
+            },
+            data: formData
+        })
+
+            .then((res) => {
+                setMessage('Terima kasih, laporan anda akan segera diproses')
+                setError(false)
+                showNotification()
+                setTimeout(() => {
+                    navigate('/report-list')
+                }, 4000)
+            })
+            .catch((err) => {
+                setMessage(err)
+                setError(true)
+                showNotification()
+            })
+    }
+
+    const fileOnchangeHandler = (event) => {
+        onPictureChange(event.target.files[0])
+    }
+
+    const changeCityOption = () => {
+        onCityChange('')
+        if (province === '') {
+            setCityOption([])
+        } else {
+            STATIC.places.forEach(place => {
+                if (place.province === province) {
+                    setCityOption(place.cities)
+                }
+            })
+        }
+    }
+
+    const changeSelectedCity = () => {
+        const city = document.querySelector('#city').value
+        onCityChange(city)
     }
 
     return (
-        <>
-            <form onSubmit={onSubmitForm} className='create-report-form'>
-                <section className='data'>
-                    <div className="input-row">
-                        <div className="input-col" style={{ width: '150px' }}>Species</div>
-                        <div className="input-prop">
-                            <input className="input-wrapper"
-                                type="text"
-                                name="species"
-                                value={species}
-                                onChange={onSpeciesChange}
-                                placeholder="species"
-                                required />
-                        </div>
-                    </div>
-                    <div className="input-row">
-                        <div className="input-col" style={{ width: '150px' }}>Color</div>
-                        <div className="input-prop">
-                            <input className="input-wrapper"
-                                type="text"
-                                name="color"
-                                value={color}
-                                onChange={onColorChange}
-                                placeholder="color"
-                                required />
-                        </div>
-                    </div>
-                    <div className="input-row">
-                        <div className="input-col" style={{ width: '150px' }}>Special Features</div>
-                        <div className="input-prop">
-                            <textarea className="input-wrapper"
-                                type="text"
-                                name="special_features"
-                                value={specialFeatures}
-                                onChange={onFeaturesChange}
-                                placeholder="special features"
-                                required />
-                        </div>
-                    </div>
-                    <div className="input-row">
-                        <div className="input-col" style={{ width: '150px' }}>Location</div>
-                        <div className="input-prop">
-                            <textarea className="input-wrapper"
-                                type="text"
-                                name="location"
-                                value={location}
-                                onChange={onLocationChange}
-                                placeholder="location"
-                                required />
-                        </div>
-                    </div>
-                    <div className="input-row">
-                        <div className="input-col" style={{ width: '150px' }}>Description</div>
-                        <div className="input-prop">
-                            <textarea className="input-wrapper"
-                                type="text"
-                                name="animal_description"
-                                value={animalDescription}
-                                onChange={onDescriptionChange}
-                                placeholder="animal description"
-                                required />
-                        </div>
-                    </div>
-                </section>
-
-                <section className='data'>
-                    <div className="input-row">
-                        <div className="input-col" style={{ width: '150px' }}>Date</div>
-                        <div className="input-prop">
-                            <input className="input-wrapper"
-                                type="text"
-                                name="date"
-                                value={date}
-                                onChange={onDateChange}
-                                placeholder="date"
-                                required />
-                        </div>
-                    </div>
-                    <div className="input-row">
-                        <div className="input-col" style={{ width: '150px' }}>Animal Image</div>
-                        <div className="input-prop">
-                            <input className="input-wrapper"
-                                type="file"
-                                name="animal_img"
-                                // onChange={handleFile}
-                                placeholder="File"
-                                required />
-                        </div>
-                    </div>
-                </section>
-                <div className='button-container'>
-                    <button type="submit" className="btn-add">Add Report</button>
+        <form onSubmit={onSubmitHandler} className='create-report-form'>
+            <div>
+                <div className='input-field'>
+                    <label htmlFor='animal'>Jenis Hewan</label>
+                    <input id='animal' type='text' value={animal} onChange={onAnimalChange} required />
                 </div>
-
-            </form>
-        </>
+                <div className='input-field'>
+                    <label>Status</label>
+                    <select id='status' type='select' value={status} onChange={onStatusChange} required>
+                        <option></option>
+                        <option>Hilang</option>
+                        <option>Liar</option>
+                    </select>
+                </div>
+                <div className='input-field'>
+                    <label>Provinsi</label>
+                    <select type='select' value={province} onChange={setProvince} required>
+                        <option></option>
+                        {
+                            STATIC.places.map((place, index) =>
+                                <option key={index}>{ place.province }</option>
+                            )
+                        }
+                    </select>
+                </div>
+                <div className='input-field'>
+                    <label>Kabupaten/ Kota</label>
+                    <select id='city' type='select' value={city} onChange={changeSelectedCity} required>
+                        <option></option>
+                        {
+                            cityOption.map((city, index) =>
+                                <option key={index}>{ city }</option>
+                            )
+                        }
+                    </select>
+                </div>
+                <div className='input-field'>
+                    <label htmlFor='location'>Lokasi Terakhir Terlihat</label>
+                    <input id='location' type='text' value={location} onChange={onLocationChange} required />
+                </div>
+                <div className='input-field'>
+                    <label htmlFor='color'>Warna Bulu</label>
+                    <input id='color' type='text' value={color} onChange={onColorChange} required />
+                </div>
+                <div className='input-field'>
+                    <label htmlFor='characteristic'>Deskripsi Lengkap (Nama, Ciri Khas)</label>
+                    <input id='characteristic' type='text' value={characteristic} onChange={onCharacteristicChange} required />
+                </div>
+                <div className='input-field'>
+                    <label htmlFor='reporter'>Nama Lengkap Pelapor</label>
+                    <input id='reporter' type='text' value={reporter} onChange={onReporterChange} required />
+                </div>
+                <div className='input-field'>
+                    <label htmlFor='phone'>Nomor Telepon Pelapor</label>
+                    <input id='phone' type='text' value={phone} onChange={onPhoneChange} required />
+                </div>
+                <div className='input-field'>
+                    <label htmlFor='picture'>Foto Hewan</label>
+                    <input id='picture' type='file' onChange={fileOnchangeHandler} required />
+                </div>
+                <div className='input-field'>
+                    <button type='submit' className='send-btn'>KIRIM LAPORAN</button>
+                </div>
+            </div>
+            <NotificationAlert status={errorStatus} text={messageText}/>
+        </form>
     )
 }
 
-export default CreateReportFrom
+CreateReportForm.propTypes = {
+    createReport: PropTypes.func,
+    profileData: PropTypes.object
+}
+
+export default CreateReportForm
