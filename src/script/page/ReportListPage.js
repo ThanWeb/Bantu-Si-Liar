@@ -2,7 +2,7 @@ import React from 'react'
 
 const ReportListPage = () => {
     return (
-        <div>
+        <div className='report-list-page'>
             <h1>ReportListPage</h1>
         </div>
     )

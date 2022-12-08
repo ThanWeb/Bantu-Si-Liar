@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react'
 import { getArticles } from '../utils/network-data'
 import ArticlePreview from '../component/ArticlePreview'
 
-function ArticleListPage () {
+const ArticleListPage = () => {
     const [articles, setArticles] = useState([])
 
     useEffect(() => {

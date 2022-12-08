@@ -15,7 +15,7 @@ const LoginForm = ({ login }) => {
     }
 
     return (
-        <form className="form-input" onSubmit={onSubmitHandler}>
+        <form className="login-form" onSubmit={onSubmitHandler}>
             <div className="wrap-input">
                 <label>E-mail atau Nama Pengguna </label>
                 <input

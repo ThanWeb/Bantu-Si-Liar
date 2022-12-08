@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom'
 import CreateReportForm from '../component/CreateReportForm'
 import PropTypes from 'prop-types'
 
-function CreateReportPage ({ loginStatus }) {
+const CreateReportPage = ({ loginStatus }) => {
     if (loginStatus === '') {
         return (
             <div className='create-report-page'>

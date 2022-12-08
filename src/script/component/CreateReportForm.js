@@ -2,7 +2,7 @@ import React from 'react'
 import useInput from '../hooks/useInput'
 // import { useNavigate } from 'react-router-dom'
 
-function InputAddReport () {
+const CreateReportFrom = () => {
     // const navigate = useNavigate()
 
     const [species, onSpeciesChange] = useInput()
@@ -47,7 +47,7 @@ function InputAddReport () {
 
     return (
         <>
-            <form onSubmit={onSubmitForm} className='container-add-report'>
+            <form onSubmit={onSubmitForm} className='create-report-form'>
                 <section className='data'>
                     <div className="input-row">
                         <div className="input-col" style={{ width: '150px' }}>Species</div>
@@ -145,4 +145,4 @@ function InputAddReport () {
     )
 }
 
-export default InputAddReport
+export default CreateReportFrom
