@@ -12,7 +12,7 @@ import ReportListPage from './page/ReportListPage'
 import ReportDetailPage from './page/ReportDetailPage'
 import { getLoggedId, getProfile, removeLoggedId } from './utils/network-data'
 
-function App () {
+const App = () => {
     const [authedUser, setAuthedUser] = useState('')
     const [profile, setProfile] = useState({})
 
@@ -52,7 +52,7 @@ function App () {
                     <Route path='article-list' element={<ArticleListPage />} />
                     <Route path='article-detail/:id' element={<ArticleDetailPage />} />
                     <Route path='profile' element={<ProfilePage data={profile}/>} />
-                    <Route path='create-report' element={<CreateReportPage loginStatus={authedUser} />} />
+                    <Route path='create-report' element={<CreateReportPage loginStatus={authedUser}/>} />
                     <Route path='report-list' element={<ReportListPage />} />
                     <Route path='report-detail/:id' element={<ReportDetailPage />} />
                 </Routes>

@@ -1,6 +1,6 @@
 import API_ENDPOINT from '../globals/api-endpoint'
 
-const register = async ({ username, email, password, picture, name, phone, province, city, address }) => {
+const register = async ({ username, email, password, name, province, city, address, phone, picture }) => {
     const response = await fetch(API_ENDPOINT.REGISTER, {
         method: 'POST',
         headers: {

@@ -17,8 +17,10 @@ const LoginForm = ({ login }) => {
     return (
         <form className="login-form" onSubmit={onSubmitHandler}>
             <div className="wrap-input">
-                <label>E-mail atau Nama Pengguna </label>
+                <label htmlFor='identifier'>E-mail atau Nama Pengguna </label>
                 <input
+                    id='identifier'
+                    className='identifier'
                     type="text"
                     value={identifier}
                     onChange={handleIdentifierChange}
@@ -27,16 +29,18 @@ const LoginForm = ({ login }) => {
 
             </div>
             <div className="wrap-input">
-                <label>Kata Sandi</label>
+                <label htmlFor='password'>Kata Sandi</label>
                 <input
+                    id='password'
+                    className='password'
                     type="password"
                     value={password}
                     onChange={handlePasswordChange}
                     required
                 />
             </div>
-            <div className='button-container'>
-                <button type="submit" className="btn-auth">Masuk</button>
+            <div className='input-field'>
+                <button type='submit' className='login-btn'>DAFTAR</button>
             </div>
         </form>
     )

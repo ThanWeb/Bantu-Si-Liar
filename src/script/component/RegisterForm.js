@@ -110,7 +110,7 @@ const RegisterForm = ({ register }) => {
                     </div>
                 </div>
                 <div className='input-field'>
-                    <button type='submit' className='btn-daftar'>SIGN UP</button>
+                    <button type='submit' className='register-btn'>DAFTAR</button>
                 </div>
             </div>
         </form>
