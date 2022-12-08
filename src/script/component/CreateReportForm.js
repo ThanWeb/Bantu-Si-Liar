@@ -53,7 +53,7 @@ const CreateReportForm = ({ createReport, profileData }) => {
         formData.append('date', date)
 
         axios({
-            url: 'http://localhost/rest-api-bantu-si-liar/api/create-report.php',
+            url: 'https://antekteknologi.my.id/api/rest-api-bantu-si-liar/api/create-report.php',
             method: 'POST',
             headers: {
                 'Content-Type': 'multipart/form-data'
