@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { Link } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 import LoginForm from '../component/LoginForm'
 import { login, putLoggedId } from '../utils/network-data'
 import NotificationAlert from '../component/NotificationAlert'
@@ -9,6 +9,7 @@ import setDisplayDrawer from '../utils/set-display-drawer'
 
 const LoginPage = ({ loginSuccess, loginStatus, data }) => {
     setDisplayDrawer()
+    const navigate = useNavigate()
     const [messageText, setMessage] = useState('')
     const [errorStatus, setError] = useState(false)
 
@@ -26,14 +27,7 @@ const LoginPage = ({ loginSuccess, loginStatus, data }) => {
     }
 
     if (loginStatus !== '') {
-        return (
-            <div className='login-page'>
-                <h3>Selamat datang, {data.name}</h3>
-                <h3>Anda telah berhasil login</h3>
-                <Link to='/create-report'>Buat Laporan</Link>
-                <Link to='/'>Kembali ke Beranda</Link>
-            </div>
-        )
+        navigate('/')
     }
 
     return (
