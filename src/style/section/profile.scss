@@ -2,10 +2,6 @@
 @import '../variable/variable.scss';
 
 .profile-page {
-    padding: 2em;
-    @include flex-box();
-    width: 100%;
-    min-height: 70vh; 
 
     .container {
         @include flex-box($direction: column);
@@ -31,84 +27,3 @@
         }
     }
 }
-
-
-// .container {
-//     margin: 12px auto;
-//     padding: 32px;
-// }
-
-// .profile {
-//     margin: 24px;
-//     margin-left: 80px;
-//     margin-right: 80px;
-//     display: block;
-//     background: linear-gradient(to right, rgba(159, 205, 212, 1), rgba(213, 232, 236, 1));
-//     border-radius: 10px;
-//     height: 560px auto;
-// }
-
-// .profile h1 {
-//     text-align: center;
-//     margin: 16px;
-// }
-
-// .profile img {
-//     margin-left: auto;
-//     margin-right: auto;
-//     display: block;
-//     width: 130px;
-//     margin-bottom: 30px;
-// }
-
-// .card {
-//     display: flex;
-//     justify-content: center;
-//     align-items: center;
-//     flex-direction: column;
-//     min-height: 8vh;
-// }
-
-// .card label {
-//     font-size: 18px;
-//     font-weight: bold;
-// }
-
-// .card input {
-//     font-size: 18px;
-//     font-family: sans-serif;
-//     display: block;
-//     width: 30%;
-// }
-
-// .input_submit {
-//     text-align: center;
-//     font-size: 16px;
-//     background-color: transparent;
-    
-// }
-
-// .input_submit button {
-//     background-color: #5ebece;
-//     cursor: pointer;
-//     border: none;
-//     border-radius: 6px;
-//     margin: 8px;
-//     margin-bottom: -50%;
-//     padding: 16px;
-//     padding-top: 8px;
-//     padding-bottom: 8px;
-//     font-weight: bold;
-// }
-
-// @media screen and (min-width: 550px) {
-    
-// }
-
-// @media screen and (min-width: 768px) {
-    
-// }
-
-// @media screen and (min-width: 1024px) {
-    
-// }

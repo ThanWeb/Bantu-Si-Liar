@@ -41,13 +41,11 @@ const LoginPage = ({ loginSuccess, loginStatus, data }) => {
             <div>
                 <header>
                     <img src='public/animasi-login.png' alt='Login' />
-                    <img className='logo' src='public/logo-transparent.png' alt='Logo Bantu Si Liar'/>
                 </header>
-                <h2>SELAMAT DATANG KEMBALI !</h2>
+                <h2>MARI MASUK</h2>
                 <LoginForm login={onLogin} />
-                <hr></hr>
-                <p className='footer-form'>Belum punya akun ?
-                    <span>{' '}<Link to='/register'>Daftar</Link></span>
+                <p className='footer-form'>Belum punya akun?
+                    <span className='highlight'><Link to='/register'> Daftar</Link></span>
                 </p>
             </div>
             <NotificationAlert status={errorStatus} text={messageText}/>

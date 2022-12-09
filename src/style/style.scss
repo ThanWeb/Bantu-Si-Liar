@@ -70,9 +70,16 @@ button, a, input, textarea, svg {
 
 main {
     margin-top: $top-gap;
-    padding: 0 2em;
+    padding: 2em;
+    @include flex-box($direction: column);
+    width: 100%;
+    min-height: 70vh; 
 }
 
 .btn {
     padding: .5em 2em;
+}
+
+.highlight {
+    font-weight: bolder;
 }

@@ -1,3 +1,49 @@
+@import '../mixin/flexbox-mixin.scss';
+@import '../variable/variable.scss';
+
+.login-page {
+    text-align: center;
+
+    img {
+        width: 50%;
+    }
+
+    .login-form {
+        padding: 1em 0;
+    }
+
+    .input-field {
+        text-align: left;
+        @include flex-box($direction: column);
+        margin-bottom: 1em;
+
+        label {
+            margin-bottom: .5em;
+        }
+
+        input, label {
+            padding-left: .5em;
+            width: 100%;
+        }
+    }
+
+    .login-btn {
+        background-color: $fourth-color;
+        border-radius: 1em;
+        border: 0 solid $fourth-color;
+        color: $primary-icon-color;
+        width: 60%;
+        text-align: center;
+    }
+
+    .footer-form {
+        margin-top: 1em;
+        padding-top: 1em;
+        border-top: 1px solid $primary-color;
+    }
+}
+
+
 // .login-page {
 //     flex: 70%;
 //     height: 100vh;
