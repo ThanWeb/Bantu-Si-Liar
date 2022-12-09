@@ -6,8 +6,10 @@
 @import './section/main.scss';
 @import './section/article-list.scss';
 @import './section/create-report.scss';
+@import './mixin/responsive-mixin.scss';
 
 @import url('https://fonts.googleapis.com/css2?family=Barlow&family=Rubik&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Rubik+Vinyl&display=swap');
 
 // body {
 //     background: linear-gradient(
@@ -19,7 +21,12 @@
 
 body, input, textarea, button, select, option {
     font-size: 16px;
+    line-height: 1.5em;
     font-family: 'Rubik', 'Barlow', sans-serif;
+
+    @include tablet {
+        font-size: 20px;
+    }
 }
 
 .hidden {
@@ -39,4 +46,17 @@ body, input, textarea, button, select, option {
 
 .italic-text {
     font-style: italic;
+}
+
+img {
+    width: 10%;
+}
+
+svg {
+    height: 100%;
+}
+
+button, a, input, textarea, svg {
+    min-width: 36px;
+    min-height: 36px;
 }
