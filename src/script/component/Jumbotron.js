@@ -4,14 +4,13 @@ import { Link } from 'react-router-dom'
 const Jumbotron = () => {
     return (
         <header className='jumbotron'>
-            <div>
-                <img src='public/jumbotron-image.png' alt='Jumbotron Image'/>
-                <Link to='create-report'>Laporkan</Link>
+            <div className='header'>
+                <img src='public/jumbotron-image.png' alt='Jumbotron Image' className='image'/>
+                <Link to='create-report' className='report-btn btn'>Laporkan</Link>
             </div>
-            <div>
-                <h2>Bantu mereka hanya dengan beberapa klik</h2>
-                <p>Kalian yang menemukan, kita bersama yang selamatkan</p>
-                <p>Terima kasih atas kepedulian kalian</p>
+            <div className='description'>
+                <h4>Kalian yang menemukan,</h4>
+                <h4>kita bersama yang selamatkan</h4>
             </div>
         </header>
     )

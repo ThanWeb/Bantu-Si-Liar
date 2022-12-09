@@ -20,7 +20,7 @@ const ReportsSection = ({ reportList }) => {
             {
                 getLatestReports(reportList)
             }
-            <div>
+            <div className='see-all-btn btn'>
                 <Link to='/report-list'>Lihat Semua</Link>
             </div>
         </div>

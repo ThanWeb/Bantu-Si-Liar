@@ -36,7 +36,7 @@ const ArticlesSection = ({ articleList }) => {
             {
                 randomArticles.map((article, index) => <ArticlePreview key={index} articleData={article}/>)
             }
-            <div>
+            <div className='see-all-btn btn'>
                 <Link to='/article-list'>Lihat Semua</Link>
             </div>
         </div>

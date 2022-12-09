@@ -1,0 +1,78 @@
+@import '../mixin/flexbox-mixin.scss';
+@import '../variable/variable.scss';
+
+.home-page {
+    text-align: center;
+    
+    h2 {
+        margin: 2em 0 1em;
+    }
+
+    h3 {
+        margin: 1em 0;
+    }
+
+    .jumbotron, .about-section, .reports-section, .articles-section {
+        margin-bottom: 2em;
+    }
+
+    .jumbotron {
+
+        .header {
+            @include flex-box($direction: column);
+        }
+
+        .image {
+            margin: 2em 0;
+            width: 80%;
+        }
+
+        .description {
+            margin: 2em 0;
+        }
+
+        .report-btn {
+            @include flex-box();
+            background-color: $secondary-color;
+            color: $primary-icon-color;
+            border-radius: .5em;
+            font-weight: bold;
+            width: 50%;
+        }
+    }
+
+    .about-section {
+
+        .features {
+            @include flex-box();
+        }
+    }
+
+    .reports-section, .articles-section {
+        text-align: left;
+
+        h3 {
+            margin: .5em 0;
+        }
+
+        img {
+            border-radius: 1em;
+            width: 100%;
+            height: 13em;
+            object-fit: cover;
+            
+        }
+
+        .report-preview, .article-preview {
+            margin-bottom: 2em;
+        }
+
+        .see-all-btn {
+            background-color: $terniary-color;
+            border-radius: 1em;
+            color: $primary-icon-color;
+            width: 100%;
+            text-align: center;
+        }
+    }
+}

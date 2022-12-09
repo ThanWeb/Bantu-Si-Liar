@@ -10,8 +10,10 @@ const ReportPreview = ({ reportData }) => {
             <Link to={`/report-detail/${reportData.id}`}>
                 <h3>Jenis hewan {reportData.animal}</h3>
             </Link>
-            <p>Laporan dibuat oleh {reportData.reporter}, pada {reportData.date}</p>
-            <p>Terakhir dilihat di {reportData.location}</p>
+            <span>Status: {reportData.status}</span>
+            <p>Terakhir dilihat di lokasi {reportData.location}</p>
+            <p>Nama pelapor {reportData.reporter}</p>
+            <p>Laporan ditulis pada {reportData.date}</p>
         </div>
     )
 }
