@@ -26,9 +26,9 @@ function InputAddReport() {
         formData.append('animal_img', file.animal_img)
         formData.append('species', onSpeciesChange.species)
         formData.append('color', onColorChange.color)
-        formData.append('special_features', onFeaturesChange.special_features)
+        formData.append('specialFeatures', onFeaturesChange.special_features)
         formData.append('location', onLocationChange.location)
-        formData.append('animal_description', onDescriptionChange.animal_description)
+        formData.append('animalDescription', onDescriptionChange.animal_description)
         formData.append('date', onDateChange.date)
 
         setLoading(true)
