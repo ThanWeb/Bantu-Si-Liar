@@ -31,13 +31,13 @@
         }
     }
 
-    .report-btn {
+    .back-to-home {
         @include flex-box();
         background-color: $secondary-color;
         color: $primary-icon-color;
         border-radius: .5em;
         font-weight: bold;
-        width: 50%;
+        width: 100%;
     }
 
     .login-btn {
