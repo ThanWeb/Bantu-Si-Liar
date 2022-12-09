@@ -1,183 +1,74 @@
-// @import '../mixin/flexbox-mixin.scss';
+@import '../mixin/flexbox-mixin.scss';
+@import '../mixin/sticky-elemen-mixin.scss';
+@import '../variable/variable.scss';
 
-// .register-page {
-// 	@include flex-box();
-// 	background-color: lightskyblue;
+.register-page {
+	@include flex-box();
 
-// 	& .container {
-// 		width: 80%;
-// 		margin: auto;
-// 	}
+	& .container {
+		width: 90%;
+		margin: auto;
+	}
 
-// 	& header {
-// 		text-align: center;
-// 	}
+	& header {
+		text-align: center;
+		margin-bottom: 1em;
+	}
 
-// 	& .logo {
-// 		width: 30%;
-// 	}
+	& .logo {
+		width: 50%;
+		height: auto;
+	}
 
-// 	.input-field {
-// 		@include flex-box($direction: column, $align: center);
-// 		width: 100%;
-// 		margin-bottom: 1em;
-// 		text-align: left;
+	.input-field {
+		@include flex-box($direction: column, $align: center);
+		width: 100%;
+		margin-bottom: 1em;
+		text-align: left;
 
-// 		label {
-// 			width: 100%;
-// 			margin-bottom: .5em;
-// 		}
+		label {
+			width: 100%;
+			margin-bottom: .5em;
+		}
 
-// 		input, select {
-// 			border: 1px solid darkgray;
-// 			border-radius: 4px;
-// 			height: 2.25em;
-// 			padding: 0 .5em;
-// 			width: 100%;
-// 			background-color: white;
-// 		}
+		input, select {
+			border: 1px solid darkgray;
+			border-radius: 4px;
+			height: 2.25em;
+			padding: 0 .5em;
+			width: 100%;
+			background-color: white;
+		}
 
-// 		input:focus, select:focus {
-// 			border: 1px solid lightseagreen;
-// 		}
-// 	}
+        img {
+            margin: 1em;
+            width: 20%;
+        }
+	}
 
-// 	// padding: 20px;
+    .choose-picture, .register-btn {
+        background-color: $fourth-color;
+        border-radius: 1em;
+        border: 0 solid $fourth-color;
+        color: $primary-icon-color;
+        width: 60%;
+        text-align: center;
+    }
 
-// 	// header {
-// 	// 	display: block;
-// 	// 	text-align: center;
-// 	// }
+	.choose-picture {
+        background-color: $terniary-color;
+	}
 
-// 	// header img {
-// 	// 	width: 100px;
-// 	// 	height: 100px;
-// 	// }
+    .picture-list {
+        background-color: $primary-icon-color;
+        @include flex-box();
+        flex-wrap: wrap;
+        @include sticky-elemen();
+        width: 100vw;
+        height: 100vh;
 
-// 	// header img .logo {
-// 	// 	max-width: 100%;
-// 	// 	height: auto;
-// 	// }
-
-// 	// .input-register {
-// 	// 	margin: 20px auto;
-// 	// 	padding: 10px;
-// 	// 	text-align:justify;
-// 	// 	display: flex;
-// 	// 	grid-row-gap: 20px;
-// 	// 	flex-wrap: wrap;
-// 	// 	justify-content: center;
-// 	// }
-
-// 	// .data {
-// 	// 	display: flex;
-// 	// 	flex-direction: column;
-// 	// 	gap: 5px;
-// 	// 	width: 100%;
-// 	// }
-	
-// 	// h2 {
-// 	// 	font-size: 20px;
-// 	// 	text-align: center;
-// 	// }
-
-// 	// .input-register label {
-// 	// 	font-size: 15px;
-// 	// }
-
-// 	// .input-register input, select {
-// 	// 	padding: 5px;
-// 	// 	border: none;
-// 	// 	border-radius: 5px;
-// 	// }
-
-// 	// .input-register, .address {
-// 	// 	min-height: 50px;
-// 	// 	outline: none;
-// 	// 	word-wrap: break-word;
-// 	// 	word-break: break-all;
-// 	// }
-
-// 	// button {
-// 	// 	background-color: rgb(48, 94, 143);
-// 	// 	margin-top: 5px;
-// 	// 	margin-right: 25%;
-// 	// 	margin-left: 25%;
-// 	// 	justify-content: center;
-// 	// 	align-content: center;
-// 	// }
-
-// 	// .btn-daftar {
-// 	// 	width: 50%;
-// 	// 	padding: 5px;
-// 	// 	color: #fff;
-// 	// 	border: none;
-// 	// 	border-radius: 5px;
-// 	// 	cursor: pointer;
-// 	// 	text-align: center;
-// 	// }
-	
-// 	// //tablet
-// 	// @media screen and (min-width: 600px) {
-// 	// 	.data {
-// 	// 		max-width: 500px;
-// 	// 	}
-// 	// 	button{
-// 	// 		max-width: 300px;
-// 	// 	}
-// 	// }
-
-// 	// @media screen and (min-width: 768px) {
-// 	// 	.input-register {
-// 	// 		gap: 20px;
-// 	// 	}
-		
-// 	// 	.data {
-// 	// 		max-width: 325px;
-// 	// 	}
-
-// 	// 	h2 {
-// 	// 		display: none;
-// 	// 	}
-
-// 	// 	button {
-// 	// 		max-width: 325px;
-// 	// 		height: 30px;
-// 	// 	}
-// 	// }
-
-// 	// //laptop
-// 	// @media screen and (min-width: 1024px) {
-// 	// 	.data {
-// 	// 		max-width: 450px;
-// 	// 	}
-// 	// }
-
-// 	// @media screen and (min-width: 1220px) {
-// 	// 	h1 {
-// 	// 		font-size: 25px;
-// 	// 	}
-
-// 	// 	.data {
-// 	// 		max-width: 500px;
-// 	// 	}
-
-// 	// 	.input-register label {
-// 	// 		font-size: 18px;
-// 	// 	}
-
-// 	// 	.input-register input, select {
-// 	// 		padding: 8px;
-// 	// 		border: none;
-// 	// 		border-radius: 8px;
-// 	// 	}
-		
-// 	// 	button {
-// 	// 		max-width: 400px;
-// 	// 		padding: 10px;
-// 	// 		height: 40px;
-// 	// 		font-size: 15px;
-// 	// 	}
-		
-// 	// }
-// }
+        &.hide {
+            display: none;
+        }
+    }
+}

@@ -29,7 +29,7 @@ const RegisterPage = () => {
                     <img src='public/logo-transparent.png' className='logo' alt='Logo Bantu Si Liar'/>
                 </header>
                 <RegisterForm register={onRegisterHandler}/>
-                <p>Sudah punya akun? Silahkan <Link to='/login'>Masuk</Link></p>
+                <p>Sudah punya akun? Silahkan <Link to='/login' className='highlight'>Masuk</Link></p>
                 <NotificationAlert status={errorStatus} text={messageText}/>
             </div>
         </div>

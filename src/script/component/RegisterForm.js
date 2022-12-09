@@ -100,8 +100,8 @@ const RegisterForm = ({ register }) => {
                 </div>
                 <div className='input-field'>
                     <img src={picture} alt='Selected Picture'/>
-                    <span onClick={showPictureOption}>Choose Picture</span>
-                    <div className='hidden picture-list' id='picture-list'>
+                    <span onClick={showPictureOption} className='choose-picture btn'>Choose Picture</span>
+                    <div className='hide picture-list' id='picture-list'>
                         {
                             STATIC.profilePicture.map((picture, index) =>
                                 <img key={index} className='picture-option' src={picture} alt={`Picture ${index + 1}`} onClick={() => changePicture(picture)} />
@@ -110,7 +110,7 @@ const RegisterForm = ({ register }) => {
                     </div>
                 </div>
                 <div className='input-field'>
-                    <button type='submit' className='register-btn'>DAFTAR</button>
+                    <button type='submit' className='register-btn btn'>DAFTAR</button>
                 </div>
             </div>
         </form>
