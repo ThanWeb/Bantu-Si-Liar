@@ -22,13 +22,15 @@ const ArticleDetailPage = () => {
             <img src={article.picture} alt='Article Image'/>
             <p className='italic-text'>Ditulis oleh ({article.writer}) pada {article.created}</p>
             <p className='italic-text'>Artikel terakhir kali diubah pada {article.updated}</p>
-            {
-                article.body
-                    ? getArticleBody(article.body).contents.map((text, index) => {
-                        return getArticleBody(article.body).tags[index - 1] === 'h' ? <h3 key={index}>{text}</h3> : <p key={index}>{text}</p>
-                    })
-                    : <p>None</p>
-            }
+            <div className='body'>
+                {
+                    article.body
+                        ? getArticleBody(article.body).contents.map((text, index) => {
+                            return getArticleBody(article.body).tags[index - 1] === 'h' ? <h3 key={index}>{text}</h3> : <p key={index}>{text}</p>
+                        })
+                        : <p>None</p>
+                }
+            </div>
             <p>Sumber Artikel: <a href={article.reference} target='_blank' rel="noreferrer">{article.title}</a></p>
         </div>
     )

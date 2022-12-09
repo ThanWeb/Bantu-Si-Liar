@@ -1,0 +1,24 @@
+.article-detail-page {
+	padding: 20px;
+
+	img {
+		display: block;
+		border: 1px solid #ddd;
+		border-radius: 4px;
+		padding: 5px;
+		margin: 5px;
+		width: 100%;
+	}
+	p {
+		padding: 5px;
+	}
+	.italic-text {
+		font-size: 13px;
+		line-height: 1em;
+		font-weight: bold;
+	}
+	.body {
+		line-height: 1.5em;
+		text-align: justify;
+	}
+}
