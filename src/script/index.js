@@ -1,6 +1,6 @@
 import '../style/login.scss'
 import '../style/register.scss'
-import '../style/addreport.scss'
+import '../style/report.scss'
 import '../style/style.scss'
 import React from 'react'
 import { createRoot } from 'react-dom/client'
