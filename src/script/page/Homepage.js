@@ -4,6 +4,7 @@ import AboutSection from '../component/AboutSection'
 import ReportsSection from '../component/ReportsSection'
 import ArticlesSection from '../component/ArticlesSection'
 import { getArticles, getReports } from '../utils/network-data'
+import setDisplayDrawer from '../utils/set-display-drawer'
 
 const HomePage = () => {
     const [articles, setArticles] = useState([])
@@ -12,6 +13,7 @@ const HomePage = () => {
     useEffect(() => {
         loadArticles()
         loadReports()
+        setDisplayDrawer()
     }, [])
 
     const loadArticles = async () => {

@@ -5,8 +5,10 @@ import { login, putLoggedId } from '../utils/network-data'
 import NotificationAlert from '../component/NotificationAlert'
 import showNotification from '../utils/show-notification'
 import PropTypes from 'prop-types'
+import setDisplayDrawer from '../utils/set-display-drawer'
 
 const LoginPage = ({ loginSuccess, loginStatus, data }) => {
+    setDisplayDrawer()
     const [messageText, setMessage] = useState('')
     const [errorStatus, setError] = useState(false)
 

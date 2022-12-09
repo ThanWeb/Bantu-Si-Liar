@@ -11,6 +11,7 @@ import CreateReportPage from './page/CreateReportPage'
 import ReportListPage from './page/ReportListPage'
 import ReportDetailPage from './page/ReportDetailPage'
 import { getLoggedId, getProfile, removeLoggedId } from './utils/network-data'
+import setDisplayDrawer from './utils/set-display-drawer'
 
 const App = () => {
     const [authedUser, setAuthedUser] = useState('')
@@ -37,6 +38,7 @@ const App = () => {
     const onLogoutHandler = () => {
         removeLoggedId()
         setAuthedUser('')
+        setDisplayDrawer()
     }
 
     return (

@@ -2,8 +2,10 @@ import React from 'react'
 import { Link } from 'react-router-dom'
 import CreateReportForm from '../component/CreateReportForm'
 import PropTypes from 'prop-types'
+import setDisplayDrawer from '../utils/set-display-drawer'
 
 const CreateReportPage = ({ loginStatus }) => {
+    setDisplayDrawer()
     if (loginStatus === '') {
         return (
             <div className='create-report-page'>

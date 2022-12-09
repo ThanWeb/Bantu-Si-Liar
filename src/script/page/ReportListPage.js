@@ -2,12 +2,14 @@ import React, { useState, useEffect } from 'react'
 import { getReports } from '../utils/network-data'
 import ReportPreview from '../component/ReportPreview'
 import { Link } from 'react-router-dom'
+import setDisplayDrawer from '../utils/set-display-drawer'
 
 const ReportListPage = () => {
     const [reports, setReports] = useState([])
 
     useEffect(() => {
         retrieveReports()
+        setDisplayDrawer()
     }, [])
 
     const retrieveReports = async () => {

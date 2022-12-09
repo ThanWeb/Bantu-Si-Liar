@@ -1,7 +1,9 @@
 import React from 'react'
 import PropTypes from 'prop-types'
+import setDisplayDrawer from '../utils/set-display-drawer'
 
 const ProfilePage = ({ data }) => {
+    setDisplayDrawer()
     return (
         <div className='profile-page'>
             <div className='container'>
