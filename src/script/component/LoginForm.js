@@ -16,7 +16,7 @@ const LoginForm = ({ login }) => {
 
     return (
         <form className="login-form" onSubmit={onSubmitHandler}>
-            <div className="wrap-input">
+            <div className="input-field">
                 <label htmlFor='identifier'>E-mail atau Nama Pengguna </label>
                 <input
                     id='identifier'
@@ -28,7 +28,7 @@ const LoginForm = ({ login }) => {
                 />
 
             </div>
-            <div className="wrap-input">
+            <div className="input-field">
                 <label htmlFor='password'>Kata Sandi</label>
                 <input
                     id='password'
