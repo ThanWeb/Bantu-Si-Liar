@@ -6,7 +6,7 @@ import { HiArrowLeft } from 'react-icons/hi'
 
 function AddReportPage () {
     return (
-        <section className="add-report-page">
+        <section className="report-page">
             <header>
                 <h2>LAPORKAN</h2>
             </header>
