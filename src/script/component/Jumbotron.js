@@ -1,11 +1,12 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 
 const Jumbotron = () => {
     return (
         <header className='jumbotron'>
             <div>
                 <img src='public/jumbotron-image.png' alt='Jumbotron Image'/>
-                <button>Laporkan</button>
+                <Link to='create-report'>Laporkan</Link>
             </div>
             <div>
                 <h2>Bantu mereka hanya dengan beberapa klik</h2>

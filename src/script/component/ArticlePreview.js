@@ -2,7 +2,7 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import { Link } from 'react-router-dom'
 
-const ArticlesSection = ({ articleData }) => {
+const ArticlePreview = ({ articleData }) => {
     return (
         <div className='article-preview'>
             <img src={articleData.picture}/>
@@ -15,8 +15,8 @@ const ArticlesSection = ({ articleData }) => {
     )
 }
 
-ArticlesSection.propTypes = {
+ArticlePreview.propTypes = {
     articleData: PropTypes.object
 }
 
-export default ArticlesSection
+export default ArticlePreview

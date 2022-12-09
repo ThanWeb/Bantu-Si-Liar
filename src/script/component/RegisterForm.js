@@ -48,7 +48,7 @@ const RegisterForm = ({ register }) => {
     }
 
     return (
-        <form onSubmit={onSubmitHandler} className='register'>
+        <form onSubmit={onSubmitHandler} className='register-form'>
             <div>
                 <div className='input-field'>
                     <label htmlFor='username'>Nama Pengguna</label>
@@ -110,7 +110,7 @@ const RegisterForm = ({ register }) => {
                     </div>
                 </div>
                 <div className='input-field'>
-                    <button type='submit' className='btn-daftar'>SIGN UP</button>
+                    <button type='submit' className='register-btn'>DAFTAR</button>
                 </div>
             </div>
         </form>

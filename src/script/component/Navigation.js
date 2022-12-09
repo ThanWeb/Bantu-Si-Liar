@@ -5,7 +5,7 @@ import PropTypes from 'prop-types'
 const Navigation = ({ loginStatus, profileData, logout }) => {
     if (loginStatus === '') {
         return (
-            <nav>
+            <nav className='navigation'>
                 <Link to='/'>Beranda</Link>
                 <Link to='login'>Masuk</Link>
                 <Link to='create-report'>Buat Laporan</Link>
@@ -16,7 +16,7 @@ const Navigation = ({ loginStatus, profileData, logout }) => {
     }
 
     return (
-        <nav>
+        <nav className='navigation'>
             <Link to='/'>Home</Link>
             <Link to='profile'>
                 <img src={profileData.picture} alt={profileData.name}/>
