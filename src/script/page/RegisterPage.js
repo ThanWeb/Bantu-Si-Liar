@@ -27,6 +27,7 @@ const RegisterPage = () => {
             <div className='container'>
                 <header>
                     <img src='public/logo-transparent.png' className='logo' alt='Logo Bantu Si Liar'/>
+                    <h1>Selamat Datang</h1>
                 </header>
                 <RegisterForm register={onRegisterHandler}/>
                 <NotificationAlert status={errorStatus} text={messageText}/>
