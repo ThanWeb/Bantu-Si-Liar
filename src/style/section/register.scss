@@ -1,183 +1,183 @@
-// @import '../mixin/flexbox-mixin.scss';
+@import '../mixin/flexbox-mixin.scss';
 
-// .register-page {
-// 	@include flex-box();
-// 	background-color: lightskyblue;
+.register-page {
+	@include flex-box();
+	background-color: lightskyblue;
 
-// 	& .container {
-// 		width: 80%;
-// 		margin: auto;
-// 	}
+	& .container {
+		width: 80%;
+		margin: auto;
+	}
 
-// 	& header {
-// 		text-align: center;
-// 	}
+	& header {
+		text-align: center;
+	}
 
-// 	& .logo {
-// 		width: 30%;
-// 	}
+	& .logo {
+		width: 30%;
+	}
 
-// 	.input-field {
-// 		@include flex-box($direction: column, $align: center);
-// 		width: 100%;
-// 		margin-bottom: 1em;
-// 		text-align: left;
+	.input-field {
+		@include flex-box($direction: column, $align: center);
+		width: 100%;
+		margin-bottom: 1em;
+		text-align: left;
 
-// 		label {
-// 			width: 100%;
-// 			margin-bottom: .5em;
-// 		}
+		label {
+			width: 100%;
+			margin-bottom: .5em;
+		}
 
-// 		input, select {
-// 			border: 1px solid darkgray;
-// 			border-radius: 4px;
-// 			height: 2.25em;
-// 			padding: 0 .5em;
-// 			width: 100%;
-// 			background-color: white;
-// 		}
+		input, select {
+			border: 1px solid darkgray;
+			border-radius: 4px;
+			height: 2.25em;
+			padding: 0 .5em;
+			width: 100%;
+			background-color: white;
+		}
 
-// 		input:focus, select:focus {
-// 			border: 1px solid lightseagreen;
-// 		}
-// 	}
+		input:focus, select:focus {
+			border: 1px solid lightseagreen;
+		}
+	}
 
-// 	// padding: 20px;
+	padding: 20px;
 
-// 	// header {
-// 	// 	display: block;
-// 	// 	text-align: center;
-// 	// }
+	header {
+		display: block;
+		text-align: center;
+	}
 
-// 	// header img {
-// 	// 	width: 100px;
-// 	// 	height: 100px;
-// 	// }
+	header img {
+		width: 100px;
+		height: 100px;
+	}
 
-// 	// header img .logo {
-// 	// 	max-width: 100%;
-// 	// 	height: auto;
-// 	// }
+	header img .logo {
+		max-width: 100%;
+		height: auto;
+	}
 
-// 	// .input-register {
-// 	// 	margin: 20px auto;
-// 	// 	padding: 10px;
-// 	// 	text-align:justify;
-// 	// 	display: flex;
-// 	// 	grid-row-gap: 20px;
-// 	// 	flex-wrap: wrap;
-// 	// 	justify-content: center;
-// 	// }
+	.input-register {
+		margin: 20px auto;
+		padding: 10px;
+		text-align:justify;
+		display: flex;
+		grid-row-gap: 20px;
+		flex-wrap: wrap;
+		justify-content: center;
+	}
 
-// 	// .data {
-// 	// 	display: flex;
-// 	// 	flex-direction: column;
-// 	// 	gap: 5px;
-// 	// 	width: 100%;
-// 	// }
+	.data {
+		display: flex;
+		flex-direction: column;
+		gap: 5px;
+		width: 100%;
+	}
 	
-// 	// h2 {
-// 	// 	font-size: 20px;
-// 	// 	text-align: center;
-// 	// }
+	h2 {
+		font-size: 20px;
+		text-align: center;
+	}
 
-// 	// .input-register label {
-// 	// 	font-size: 15px;
-// 	// }
+	.input-register label {
+		font-size: 15px;
+	}
 
-// 	// .input-register input, select {
-// 	// 	padding: 5px;
-// 	// 	border: none;
-// 	// 	border-radius: 5px;
-// 	// }
+	.input-register input, select {
+		padding: 5px;
+		border: none;
+		border-radius: 5px;
+	}
 
-// 	// .input-register, .address {
-// 	// 	min-height: 50px;
-// 	// 	outline: none;
-// 	// 	word-wrap: break-word;
-// 	// 	word-break: break-all;
-// 	// }
+	.input-register, .address {
+		min-height: 50px;
+		outline: none;
+		word-wrap: break-word;
+		word-break: break-all;
+	}
 
-// 	// button {
-// 	// 	background-color: rgb(48, 94, 143);
-// 	// 	margin-top: 5px;
-// 	// 	margin-right: 25%;
-// 	// 	margin-left: 25%;
-// 	// 	justify-content: center;
-// 	// 	align-content: center;
-// 	// }
+	button {
+		background-color: rgb(48, 94, 143);
+		margin-top: 5px;
+		margin-right: 25%;
+		margin-left: 25%;
+		justify-content: center;
+		align-content: center;
+	}
 
-// 	// .btn-daftar {
-// 	// 	width: 50%;
-// 	// 	padding: 5px;
-// 	// 	color: #fff;
-// 	// 	border: none;
-// 	// 	border-radius: 5px;
-// 	// 	cursor: pointer;
-// 	// 	text-align: center;
-// 	// }
+	.btn-daftar {
+		width: 50%;
+		padding: 5px;
+		color: #fff;
+		border: none;
+		border-radius: 5px;
+		cursor: pointer;
+		text-align: center;
+	}
 	
-// 	// //tablet
-// 	// @media screen and (min-width: 600px) {
-// 	// 	.data {
-// 	// 		max-width: 500px;
-// 	// 	}
-// 	// 	button{
-// 	// 		max-width: 300px;
-// 	// 	}
-// 	// }
+	//tablet
+	@media screen and (min-width: 600px) {
+		.data {
+			max-width: 500px;
+		}
+		button{
+			max-width: 300px;
+		}
+	}
 
-// 	// @media screen and (min-width: 768px) {
-// 	// 	.input-register {
-// 	// 		gap: 20px;
-// 	// 	}
+	@media screen and (min-width: 768px) {
+		.input-register {
+			gap: 20px;
+		}
 		
-// 	// 	.data {
-// 	// 		max-width: 325px;
-// 	// 	}
+		.data {
+			max-width: 325px;
+		}
 
-// 	// 	h2 {
-// 	// 		display: none;
-// 	// 	}
+		h2 {
+			display: none;
+		}
 
-// 	// 	button {
-// 	// 		max-width: 325px;
-// 	// 		height: 30px;
-// 	// 	}
-// 	// }
+		button {
+			max-width: 325px;
+			height: 30px;
+		}
+	}
 
-// 	// //laptop
-// 	// @media screen and (min-width: 1024px) {
-// 	// 	.data {
-// 	// 		max-width: 450px;
-// 	// 	}
-// 	// }
+	//laptop
+	@media screen and (min-width: 1024px) {
+		.data {
+			max-width: 450px;
+		}
+	}
 
-// 	// @media screen and (min-width: 1220px) {
-// 	// 	h1 {
-// 	// 		font-size: 25px;
-// 	// 	}
+	@media screen and (min-width: 1220px) {
+		h1 {
+			font-size: 25px;
+		}
 
-// 	// 	.data {
-// 	// 		max-width: 500px;
-// 	// 	}
+		.data {
+			max-width: 500px;
+		}
 
-// 	// 	.input-register label {
-// 	// 		font-size: 18px;
-// 	// 	}
+		.input-register label {
+			font-size: 18px;
+		}
 
-// 	// 	.input-register input, select {
-// 	// 		padding: 8px;
-// 	// 		border: none;
-// 	// 		border-radius: 8px;
-// 	// 	}
+		.input-register input, select {
+			padding: 8px;
+			border: none;
+			border-radius: 8px;
+		}
 		
-// 	// 	button {
-// 	// 		max-width: 400px;
-// 	// 		padding: 10px;
-// 	// 		height: 40px;
-// 	// 		font-size: 15px;
-// 	// 	}
+		button {
+			max-width: 400px;
+			padding: 10px;
+			height: 40px;
+			font-size: 15px;
+		}
 		
-// 	// }
-// }
+	}
+}
