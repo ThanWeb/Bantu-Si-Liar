@@ -65,13 +65,13 @@ async function getUserLogged () {
     return { error: false, data: responseJson.data }
 }
 
-async function addReport ({ title, body }) {
+async function addReport ({ species, color, specialFeatures, location, animalDescription }) {
     const response = await fetchWithToken(`${BASE_URL}/notes`, {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json'
         },
-        body: JSON.stringify({ title, body })
+        body: JSON.stringify({ species, color, specialFeatures, location, animalDescription })
     })
 
     const responseJson = await response.json()
@@ -84,7 +84,7 @@ async function addReport ({ title, body }) {
 }
 
 async function getReportData (id) {
-    const response = await fetchWithToken(`${BASE_URL}/notes/${id}`)
+    const response = await fetchWithToken(`${BASE_URL}/reports/${id}`)
     const responseJson = await response.json()
 
     if (responseJson.status !== 'success') {
@@ -95,7 +95,7 @@ async function getReportData (id) {
 }
 
 async function deleteReportData (id) {
-    const response = await fetchWithToken(`${BASE_URL}/notes/${id}`, {
+    const response = await fetchWithToken(`${BASE_URL}/reports/${id}`, {
         method: 'DELETE'
     })
 
