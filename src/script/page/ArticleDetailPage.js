@@ -17,7 +17,7 @@ const ArticleDetailPage = () => {
     }
 
     return (
-        <div>
+        <div className='article-detail-page'>
             <h2>{article.title}</h2>
             <img src={article.picture} alt='Article Image'/>
             <p className='italic-text'>Ditulis oleh ({article.writer}) pada {article.created}</p>

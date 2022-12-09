@@ -6,7 +6,7 @@ import NotificationAlert from '../component/NotificationAlert'
 import showNotification from '../utils/show-notification'
 import PropTypes from 'prop-types'
 
-function LoginPage ({ loginSuccess, loginStatus, data }) {
+const LoginPage = ({ loginSuccess, loginStatus, data }) => {
     const [messageText, setMessage] = useState('')
     const [errorStatus, setError] = useState(false)
 
@@ -28,18 +28,17 @@ function LoginPage ({ loginSuccess, loginStatus, data }) {
             <div className='login-page'>
                 <h3>Selamat datang, {data.name}</h3>
                 <h3>Anda telah berhasil login</h3>
+                <Link to='/create-report'>Buat Laporan</Link>
                 <Link to='/'>Kembali ke Beranda</Link>
             </div>
         )
     }
 
     return (
-        <div className='row'>
-            <section className='side'>
-                <img src='public/animasi-login.png' alt='Login' />
-            </section>
-            <div className='login-page'>
+        <div className='login-page'>
+            <div>
                 <header>
+                    <img src='public/animasi-login.png' alt='Login' />
                     <img className='logo' src='public/logo-transparent.png' alt='Logo Bantu Si Liar'/>
                 </header>
                 <h2>SELAMAT DATANG KEMBALI !</h2>
@@ -51,7 +50,6 @@ function LoginPage ({ loginSuccess, loginStatus, data }) {
             </div>
             <NotificationAlert status={errorStatus} text={messageText}/>
         </div>
-
     )
 }
 
