@@ -1,0 +1,18 @@
+@import '../mixin/flexbox-mixin.scss';
+@import '../variable/variable.scss';
+
+.footer {
+    padding: 1.5em 0;
+    text-align: center;
+    background-color: $primary-color;
+    color: $primary-background-color;
+
+    .social-media {
+        margin: 1em 0;
+        @include flex-box();
+        
+        a {
+            margin: 0 1em;
+        }
+    }
+}
