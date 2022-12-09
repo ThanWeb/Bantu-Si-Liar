@@ -10,7 +10,7 @@ const CreateReportPage = ({ loginStatus }) => {
         return (
             <div className='create-report-page'>
                 <p>Silahkan Masuk untuk dapat membuat Laporan</p>
-                <Link to='/login'>Masuk</Link>
+                <Link to='/login' className='login-btn btn'>Masuk</Link>
             </div>
         )
     }

@@ -160,7 +160,7 @@ const CreateReportForm = ({ createReport, profileData }) => {
                     <input id='picture' type='file' onChange={fileOnchangeHandler} required />
                 </div>
                 <div className='input-field'>
-                    <button type='submit' className='send-btn'>KIRIM LAPORAN</button>
+                    <button type='submit' className='send-btn btn'>KIRIM LAPORAN</button>
                 </div>
             </div>
             <NotificationAlert status={errorStatus} text={messageText}/>
