@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import PropTypes from 'prop-types'
 import ArticlePreview from './ArticlePreview'
+import { Link } from 'react-router-dom'
 
 const ArticlesSection = ({ articleList }) => {
     const [randomArticles, setRandomArticles] = useState([])
@@ -31,9 +32,13 @@ const ArticlesSection = ({ articleList }) => {
 
     return (
         <div className='articles-section'>
+            <h2>Artikel Terkait</h2>
             {
                 randomArticles.map((article, index) => <ArticlePreview key={index} articleData={article}/>)
             }
+            <div>
+                <Link to='/article-list'>Lihat Semua</Link>
+            </div>
         </div>
     )
 }
