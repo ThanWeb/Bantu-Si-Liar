@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { useNavigate } from 'react-router-dom'
+import { useNavigate, Link } from 'react-router-dom'
 import RegisterForm from '../component/RegisterForm'
 import { register } from '../utils/network-data'
 import NotificationAlert from '../component/NotificationAlert'
@@ -29,6 +29,7 @@ const RegisterPage = () => {
                     <img src='public/logo-transparent.png' className='logo' alt='Logo Bantu Si Liar'/>
                 </header>
                 <RegisterForm register={onRegisterHandler}/>
+                <p>Sudah punya akun? Silahkan <Link to='/login'>Masuk</Link></p>
                 <NotificationAlert status={errorStatus} text={messageText}/>
             </div>
         </div>

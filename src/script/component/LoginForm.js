@@ -40,7 +40,7 @@ const LoginForm = ({ login }) => {
                 />
             </div>
             <div className='input-field'>
-                <button type='submit' className='login-btn'>DAFTAR</button>
+                <button type='submit' className='login-btn'>MASUK</button>
             </div>
         </form>
     )

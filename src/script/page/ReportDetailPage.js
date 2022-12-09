@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom'
 import { getSingleReport } from '../utils/network-data'
+import CONFIG from '../globals/config'
 
 const ReportDetailPage = () => {
     const { id } = useParams()
@@ -17,7 +18,7 @@ const ReportDetailPage = () => {
 
     return (
         <div className='report-detail-page'>
-            <img src={report.picture} alt='Report Image'/>
+            <img src={`${CONFIG.BASE_IMAGE_URL}${report.picture}`} alt='Report Image'/>
             <p>Laporan dibuat pada {report.date}</p>
             <h3>Jenis Hewan {report.animal}</h3>
             <p>Warna Bulu {report.color}</p>
