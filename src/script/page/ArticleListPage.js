@@ -16,6 +16,7 @@ const ArticleListPage = () => {
 
     return (
         <div className="article-list-page">
+            <h1>Recommendation Article</h1>
             {
                 articles.map((article, index) => <ArticlePreview key={index} articleData={article}/>)
             }
