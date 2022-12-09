@@ -20,8 +20,8 @@ const ArticleDetailPage = () => {
         <div className='article-detail-page'>
             <h2>{article.title}</h2>
             <img src={article.picture} alt='Article Image'/>
-            <p className='italic-text'>Ditulis oleh ({article.writer}) pada {article.created}</p>
-            <p className='italic-text'>Artikel terakhir kali diubah pada {article.updated}</p>
+            <span className='label-text'>Ditulis oleh ({article.writer}) pada {article.created}</span>
+            <span className='label-text'>Artikel terakhir kali diubah pada {article.updated}</span>
             {
                 article.body
                     ? getArticleBody(article.body).contents.map((text, index) => {

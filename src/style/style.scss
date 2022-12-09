@@ -6,6 +6,7 @@
 @import './section/home.scss';
 @import './section/footer.scss';
 @import './section/article-list.scss';
+@import './section/article-detail.scss';
 @import './section/create-report.scss';
 @import './mixin/responsive-mixin.scss';
 @import './variable/variable.scss';
@@ -42,8 +43,8 @@ body, input, textarea, button, select, option {
     }
 }
 
-.italic-text {
-    font-style: italic;
+.label-text {
+    color: grey;
 }
 
 img {
