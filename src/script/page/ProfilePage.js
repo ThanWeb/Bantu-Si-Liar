@@ -7,26 +7,26 @@ const ProfilePage = ({ data }) => {
     return (
         <div className='profile-page'>
             <div className='container'>
-                <div>
+                <div className='field picture'>
                     <img src={data.picture} alt='Profile Picture'/>
                 </div>
-                <div>
+                <div className='field'>
                     <span>Nama Pengguna</span>
                     <p>{data.name}</p>
                 </div>
-                <div>
+                <div className='field'>
                     <span>Nomor Telepon</span>
                     <p>{data.phone}</p>
                 </div>
-                <div>
+                <div className='field'>
                     <span>Provinsi</span>
                     <p>{data.province}</p>
                 </div>
-                <div>
+                <div className='field'>
                     <span>Kabupaten/ Kota</span>
                     <p>{data.city}</p>
                 </div>
-                <div>
+                <div className='field'>
                     <span>Alamat</span>
                     <p>{data.address}</p>
                 </div>
