@@ -1,6 +1,6 @@
 import API_ENDPOINT from '../globals/api-endpoint'
 
-const register = async ({ username, email, password, picture, name, phone, province, city, address }) => {
+const register = async ({ username, email, password, name, province, city, address, phone, picture }) => {
     const response = await fetch(API_ENDPOINT.REGISTER, {
         method: 'POST',
         headers: {
@@ -87,4 +87,28 @@ const getSingleArticle = async (id) => {
     return { error: responseJson.error, message: responseJson.message, data: responseJson.data }
 }
 
-export { register, login, getLoggedId, putLoggedId, removeLoggedId, getProfile, getArticles, getSingleArticle }
+const getReports = async () => {
+    const response = await fetch(`${API_ENDPOINT.REPORT_LIST}`, {
+        method: 'GET',
+        headers: {
+            'Content-Type': 'application/json'
+        }
+    })
+
+    const responseJson = await response.json()
+    return { error: responseJson.error, message: responseJson.message, data: responseJson.data }
+}
+
+const getSingleReport = async (id) => {
+    const response = await fetch(`${API_ENDPOINT.SINGLE_REPORT}${id}`, {
+        method: 'GET',
+        headers: {
+            'Content-Type': 'application/json'
+        }
+    })
+
+    const responseJson = await response.json()
+    return { error: responseJson.error, message: responseJson.message, data: responseJson.data }
+}
+
+export { register, login, getLoggedId, putLoggedId, removeLoggedId, getProfile, getArticles, getSingleArticle, getReports, getSingleReport }
