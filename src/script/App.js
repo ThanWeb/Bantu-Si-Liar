@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import { Route, Routes } from 'react-router-dom'
 import Navigation from './component/Navigation'
+import Footer from './component/Footer'
 import HomePage from './page/HomePage'
 import ProfilePage from './page/ProfilePage'
 import LoginPage from './page/LoginPage'
@@ -11,7 +12,6 @@ import CreateReportPage from './page/CreateReportPage'
 import ReportListPage from './page/ReportListPage'
 import ReportDetailPage from './page/ReportDetailPage'
 import { getLoggedId, getProfile, removeLoggedId } from './utils/network-data'
-import setDisplayDrawer from './utils/set-display-drawer'
 
 const App = () => {
     const [authedUser, setAuthedUser] = useState('')
@@ -38,7 +38,6 @@ const App = () => {
     const onLogoutHandler = () => {
         removeLoggedId()
         setAuthedUser('')
-        setDisplayDrawer()
     }
 
     return (
@@ -59,8 +58,7 @@ const App = () => {
                     <Route path='report-detail/:id' element={<ReportDetailPage />} />
                 </Routes>
             </main>
-            <footer>
-            </footer>
+            <Footer/>
         </div>
     )
 }
