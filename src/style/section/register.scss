@@ -60,6 +60,7 @@
 	}
 
     .picture-list {
+		padding-top: 2em;
         background-color: $primary-icon-color;
         @include sticky-elemen();
         width: 100vw;

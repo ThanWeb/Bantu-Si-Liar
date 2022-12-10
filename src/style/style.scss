@@ -74,10 +74,10 @@ button, a, input, textarea, svg, select, option {
 
 main {
     margin-top: $top-gap;
-    padding: 2em;
-    @include flex-box($direction: column);
+    padding: 2.5em 2em 2em;
+    @include flex-box($direction: column, $justify: flex-start);
     width: 100%;
-    min-height: 75vh; 
+    min-height: 75vh;
 }
 
 .btn {
@@ -86,4 +86,8 @@ main {
 
 .highlight {
     font-weight: bolder;
+}
+
+.center {
+    text-align: center;
 }
