@@ -102,11 +102,14 @@ const RegisterForm = ({ register }) => {
                     <img src={picture} alt='Selected Picture'/>
                     <span onClick={showPictureOption} className='choose-picture btn'>Choose Picture</span>
                     <div className='hide picture-list' id='picture-list'>
-                        {
-                            STATIC.profilePicture.map((picture, index) =>
-                                <img key={index} className='picture-option' src={picture} alt={`Picture ${index + 1}`} onClick={() => changePicture(picture)} />
-                            )
-                        }
+                        <div className='list-container'>
+                            {
+                                STATIC.profilePicture.map((picture, index) =>
+                                    <img key={index} className='picture-option' src={picture} alt={`Picture ${index + 1}`} onClick={() => changePicture(picture)} />
+                                )
+                            }
+                        </div>
+                        <p>Silahkan pilih salah satu ikon</p>
                     </div>
                 </div>
                 <div className='input-field'>

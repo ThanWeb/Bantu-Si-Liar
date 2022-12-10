@@ -61,14 +61,18 @@
 
     .picture-list {
         background-color: $primary-icon-color;
-        @include flex-box();
-        flex-wrap: wrap;
         @include sticky-elemen();
         width: 100vw;
         height: 100vh;
+		text-align: center;
 
         &.hide {
             display: none;
         }
+
+		.list-container {
+			@include flex-box();
+			flex-wrap: wrap;
+		}
     }
 }

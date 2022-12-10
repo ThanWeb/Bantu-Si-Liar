@@ -27,6 +27,7 @@ const Navigation = ({ loginStatus, profileData, logout }) => {
                     <div className='profile-icon'>
                         <img className='logo' src='public/logo-transparent.png' alt='Logo Bantu Si Liar'/>
                     </div>
+                    <p className='exit-drawer'>Tekan di mana saja untuk keluar</p>
                 </div>
             </nav>
         )
@@ -51,6 +52,7 @@ const Navigation = ({ loginStatus, profileData, logout }) => {
                 <Link to='report-list'>Daftar Laporan</Link>
                 <Link to='article-list'>Daftar Artikel</Link>
                 <Link to='/' onClick={(logout)}>Keluar</Link>
+                <p className='exit-drawer'>Tekan di mana saja untuk keluar</p>
             </div>
         </nav>
     )
