@@ -19,9 +19,11 @@ const ArticleListPage = () => {
     return (
         <div className="article-list-page">
             <h1>Rekomendasi Artikel</h1>
-            {
-                articles.map((article, index) => <ArticlePreview key={index} articleData={article}/>)
-            }
+            <div className='list-container'>
+                {
+                    articles.map((article, index) => <ArticlePreview key={index} articleData={article}/>)
+                }
+            </div>
         </div>
     )
 }
