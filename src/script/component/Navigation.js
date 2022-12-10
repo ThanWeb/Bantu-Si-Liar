@@ -24,7 +24,7 @@ const Navigation = ({ loginStatus, profileData, logout }) => {
                     <Link to='create-report'>Buat Laporan</Link>
                     <Link to='report-list'>Daftar Laporan</Link>
                     <Link to='article-list'>Daftar Artikel</Link>
-                    <div className='profile-icon'>
+                    <div className='logo-section'>
                         <img className='logo' src='public/logo-transparent.png' alt='Logo Bantu Si Liar'/>
                     </div>
                     <p className='exit-drawer'>Tekan di mana saja untuk keluar</p>

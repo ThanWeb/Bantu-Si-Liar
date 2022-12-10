@@ -25,7 +25,7 @@
             transition: .5s;
             font-size: 1.5em;
             font-weight: bold;
-
+        
             .profile-image {
                 width: 50%;
                 margin: .5em;
@@ -33,17 +33,19 @@
                 @include tablet {
                     width: 30%;
                 }
+
+                @include desktop {
+                    width: 10%;
+                }
             }
 
             .logo {
                 margin-top: 3em;
                 width: 50%;
-
-
             }
 
             .profile-icon {
-                @include flex-box($direction: column)
+                @include flex-box($direction: column);
             }
 
             a {
@@ -52,6 +54,10 @@
                 width: 80%;
                 padding-bottom: 1em;
                 border-bottom: 1px solid $primary-color;
+
+                @include desktop {
+                    margin-top: 1em;
+                }
             }
         }
 
@@ -75,6 +81,12 @@
 
         .exit-drawer {
             margin-top: 1em;
+        }
+
+        .logo-section {
+            @include desktop {
+                display: none;
+            }
         }
     }
 }

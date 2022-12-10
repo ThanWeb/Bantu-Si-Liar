@@ -1,4 +1,16 @@
+@import '../mixin/flexbox-mixin.scss';
+@import '../mixin/responsive-mixin.scss';
+
 .report-detail-page {
+    width: 100%;
+    
+    @include desktop {
+        @include flex-box();
+
+        > div {
+            margin: 0 2em;
+        }
+    }
 
     h3 {
         margin: 1em 0;

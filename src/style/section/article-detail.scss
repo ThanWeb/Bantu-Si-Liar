@@ -1,3 +1,5 @@
+@import '../mixin/responsive-mixin.scss';
+
 .article-detail-page {
 
     h2 {
@@ -9,9 +11,16 @@
     }
 
 	img {
+        max-height: 16em;
         margin: 1em 0;
 		border-radius: 2em;
 		width: 100%;
+        object-fit: cover;
+
+        @include desktop {
+            max-height: 20em;
+            width: 50%;
+        }
 	}
 
 	.body {

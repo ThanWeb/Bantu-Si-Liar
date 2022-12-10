@@ -1,9 +1,18 @@
 @import '../variable/variable.scss';
 @import '../mixin/flexbox-mixin.scss';
+@import '../mixin/responsive-mixin.scss';
 
 .create-report-page {
     @include flex-box($direction: column);
     min-height: 70vh;
+
+    @include desktop {
+		width: 80%;
+
+        .create-report-form {
+            width: 100%;
+        }
+	}
 
     .login-btn, .send-btn {
         background-color: $fourth-color;
