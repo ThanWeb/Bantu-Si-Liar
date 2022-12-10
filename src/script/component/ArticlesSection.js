@@ -17,8 +17,9 @@ const ArticlesSection = ({ articleList }) => {
         if (tempArticleList.length > 0) {
             let article
             const temp = []
+            const expectedTotal = screen.width >= 992 && screen.width <= 1024 ? 4 : 3
 
-            for (let i = 0; arrayOfNumbers.length < 3; i++) {
+            for (let i = 0; arrayOfNumbers.length < expectedTotal; i++) {
                 article = tempArticleList[Math.floor(Math.random() * tempArticleList.length)]
 
                 if (!arrayOfNumbers.includes(article.id)) {
@@ -33,9 +34,11 @@ const ArticlesSection = ({ articleList }) => {
     return (
         <div className='articles-section'>
             <h2>Artikel Terkait</h2>
-            {
-                randomArticles.map((article, index) => <ArticlePreview key={index} articleData={article}/>)
-            }
+            <div className='article-list'>
+                {
+                    randomArticles.map((article, index) => <ArticlePreview key={index} articleData={article}/>)
+                }
+            </div>
             <div className='see-all-btn btn'>
                 <Link to='/article-list'>Lihat Semua</Link>
             </div>

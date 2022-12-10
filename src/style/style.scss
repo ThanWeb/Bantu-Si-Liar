@@ -17,7 +17,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Rubik+Vinyl&display=swap');
 
 body {
-    background: linear-gradient(180deg, #FFFFFF 0%, #F4F4F4 25%, #F6F6F6 75%, #FFFFFF 100%);
+    background: linear-gradient(180deg, #FFFFFF 0%, #EFF5F5 25%, #FFFFFF 50%, #EFF5F5 75%, #FFFFFF 100%);
 }
 
 body, input, textarea, button, select, option {
@@ -27,6 +27,14 @@ body, input, textarea, button, select, option {
 
     @include tablet {
         font-size: 20px;
+    }
+
+    @include desktop {
+        font-size: 22px;
+    }
+
+    @include large-desktop {
+        flex-basis: 24px;
     }
 }
 
@@ -73,7 +81,7 @@ main {
     padding: 2em;
     @include flex-box($direction: column);
     width: 100%;
-    min-height: 70vh; 
+    min-height: 75vh; 
 }
 
 .btn {

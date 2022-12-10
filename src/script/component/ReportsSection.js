@@ -5,7 +5,8 @@ import { Link } from 'react-router-dom'
 
 const ReportsSection = ({ reportList }) => {
     const getLatestReports = reports => {
-        const length = reportList.length < 3 ? reportList.length : 3
+        const expectedTotal = screen.width >= 992 && screen.width <= 1024 ? 4 : 3
+        const length = reportList.length < expectedTotal ? reportList.length : expectedTotal
         const selectedReports = []
         for (let i = 0; i < length; i++) {
             const report = reports[i]
@@ -17,9 +18,11 @@ const ReportsSection = ({ reportList }) => {
     return (
         <div className='reports-section'>
             <h2>Laporan Terbaru</h2>
-            {
-                getLatestReports(reportList)
-            }
+            <div className='report-list'>
+                {
+                    getLatestReports(reportList)
+                }
+            </div>
             <div className='see-all-btn btn'>
                 <Link to='/report-list'>Lihat Semua</Link>
             </div>
