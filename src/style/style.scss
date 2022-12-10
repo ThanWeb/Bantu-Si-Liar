@@ -32,10 +32,6 @@ body, input, textarea, button, select, option {
     @include desktop {
         font-size: 22px;
     }
-
-    @include large-desktop {
-        flex-basis: 24px;
-    }
 }
 
 .hidden {
