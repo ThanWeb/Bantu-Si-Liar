@@ -39,6 +39,14 @@
                 }
             }
 
+            .logo-section {
+                text-align: center;
+    
+                @include desktop {
+                    // display: none;
+                }
+            }
+
             .logo {
                 margin-top: 3em;
                 width: 50%;
@@ -81,12 +89,6 @@
 
         .exit-drawer {
             margin-top: 1em;
-        }
-
-        .logo-section {
-            @include desktop {
-                display: none;
-            }
         }
     }
 }
