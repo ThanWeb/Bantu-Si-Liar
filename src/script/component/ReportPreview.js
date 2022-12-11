@@ -14,6 +14,9 @@ const ReportPreview = ({ reportData }) => {
             <p>Terakhir dilihat di lokasi {reportData.location}</p>
             <p>Nama pelapor {reportData.reporter}</p>
             <p>Laporan ditulis pada {reportData.date}</p>
+            <Link to={`/report-detail/${reportData.id}`}>
+                <p className='highlight'>Selengkapnya ...</p>
+            </Link>
         </div>
     )
 }

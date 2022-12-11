@@ -81,7 +81,7 @@ main {
 }
 
 .btn {
-    padding: .5em 2em;
+    padding: .5em 0;
 }
 
 .highlight {
@@ -90,4 +90,14 @@ main {
 
 .center {
     text-align: center;
+}
+
+.pointer {
+    :hover {
+        cursor: pointer;
+    }
+}
+
+.full-width {
+    display: block;
 }

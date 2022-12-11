@@ -24,7 +24,7 @@ const ReportsSection = ({ reportList }) => {
                 }
             </div>
             <div className='see-all-btn btn'>
-                <Link to='/report-list'>Lihat Semua</Link>
+                <Link to='/report-list' className='full-width'>Lihat Semua</Link>
             </div>
         </div>
     )

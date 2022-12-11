@@ -16,7 +16,7 @@ const Navigation = ({ loginStatus, profileData, logout }) => {
                 <div>
                     <Link to='/' className='container-icon'><h1 className='app-title'>Bantu Si Liar</h1></Link>
                 </div>
-                <div className='container-icon' onClick={toggleDisplayDrawer}>
+                <div className='container-icon pointer' onClick={toggleDisplayDrawer}>
                     <FiAlignJustify className='icon'/>
                 </div>
                 <div className='drawer' id='drawer' onClick={toggleDisplayDrawer}>
@@ -38,7 +38,7 @@ const Navigation = ({ loginStatus, profileData, logout }) => {
             <div>
                 <Link to='/' className='container-icon'><h1 className='app-title'>Bantu Si Liar</h1></Link>
             </div>
-            <div className='container-icon' onClick={toggleDisplayDrawer}>
+            <div className='container-icon pointer' onClick={toggleDisplayDrawer}>
                 <FiAlignJustify className='icon'/>
             </div>
             <div className='drawer' id='drawer' onClick={toggleDisplayDrawer}>

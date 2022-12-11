@@ -11,6 +11,9 @@ const ArticlePreview = ({ articleData }) => {
             </Link>
             <p>{articleData.writer}, {articleData.created}</p>
             <p>{articleData.thumbnail}</p>
+            <Link to={`/article-detail/${articleData.id}`}>
+                <p className='highlight'>Selengkapnya ...</p>
+            </Link>
         </div>
     )
 }

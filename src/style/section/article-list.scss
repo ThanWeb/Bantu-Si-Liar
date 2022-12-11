@@ -21,7 +21,7 @@
 
     .article-preview {
         text-align: left;
-        padding: 1em 0;
+        padding-bottom: 2em;
 
         h3 {
             margin: .5em 0;
@@ -40,7 +40,7 @@
         }
 
         @include desktop {
-            padding: 0 1em;
+            padding: 0 1em 2em;
             width: 50%;
         }
 

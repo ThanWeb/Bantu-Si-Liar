@@ -100,7 +100,7 @@ const RegisterForm = ({ register }) => {
                 </div>
                 <div className='input-field'>
                     <img src={picture} alt='Selected Picture'/>
-                    <span onClick={showPictureOption} className='choose-picture btn'>Choose Picture</span>
+                    <span onClick={showPictureOption} className='choose-picture btn pointer'>Choose Picture</span>
                     <div className='hide picture-list' id='picture-list'>
                         <div className='list-container'>
                             {
@@ -113,7 +113,7 @@ const RegisterForm = ({ register }) => {
                     </div>
                 </div>
                 <div className='input-field'>
-                    <button type='submit' className='register-btn btn'>DAFTAR</button>
+                    <button type='submit' className='register-btn btn pointer'>DAFTAR</button>
                 </div>
             </div>
         </form>

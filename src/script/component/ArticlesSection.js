@@ -40,7 +40,7 @@ const ArticlesSection = ({ articleList }) => {
                 }
             </div>
             <div className='see-all-btn btn'>
-                <Link to='/article-list'>Lihat Semua</Link>
+                <Link to='/article-list' className='full-width'>Lihat Semua</Link>
             </div>
         </div>
     )
