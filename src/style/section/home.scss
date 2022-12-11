@@ -133,11 +133,16 @@
         }
 
         .see-all-btn {
+            @include flex-box();
             background-color: $terniary-color;
             border-radius: 1em;
             color: $primary-icon-color;
             width: 100%;
             text-align: center;
+
+            a {
+                line-height: 2em;
+            }
         }
     }
 }
