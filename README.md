@@ -1,8 +1,12 @@
-# Petunjuk Penggunaan Aplikasi atau User Guide “Bantu Si Liar”
+# Apa itu Bantu Si Liar?
 
-Bantu Si Liar merupakan sebuah aplikasi berbasis website yang berfungsi sebagai sumber informasi sekaligus media untuk melaporkan apabila seseorang menemukan hewan liar yang tidak memiliki tempat tinggal, yang berkeliaran tanpa pemilik atau hewan peliharaan yang hilang agar segera diberikan bantuan dan tidak menjadi masalah lingkungan di masyarakat. 
+Bantu Si Liar merupakan sebuah aplikasi berbasis website yang berfungsi sebagai sumber informasi sekaligus media untuk melaporkan apabila seseorang menemukan hewan liar yang tidak memiliki tempat tinggal, yang berkeliaran tanpa pemilik atau hewan peliharaan yang hilang.
 
-Bantu Si Liar dapat diakses dengan status tamu (tanpa akun) dan dengan status pengguna (dengan akun yang sudah berhasil login). Dimana kedua status tersebut secara garis besar bisa mengakses fitur yang sama, namun ada sedikit perbedaan dimana untuk dapat membuat sebuah laporan, pengguna harus memiliki akun dan menggunakan aplikasi dengan mode pengguna.
+Dimana tujuan pelaporan tersebut adalah untuk memberikan hewan-hewan tersebut bantuan secepat mungkin dan agar tidak menjadi masalah di lingkungan masyarakat untuk kemudian hari. 
+
+Bantu Si Liar dapat diakses dengan status tamu (tanpa akun) dan dengan status pengguna (dengan akun yang sudah berhasil login).
+
+Dimana kedua status tersebut secara garis besar bisa mengakses fitur yang sama, namun ada sedikit perbedaan dimana untuk dapat membuat sebuah laporan, pengguna harus memiliki akun dan menggunakan aplikasi dengan mode pengguna.
 
 Berikut ini adalah tangkapan layar untuk dashboard di tampilan desktop dan mobile.
 
@@ -21,4 +25,4 @@ Selain tampilan dashboard, masih banyak ada tampilan dari page yang bisa dilihat
 Panduan lebih lengkap mengenai penggunaan semua fungsionalitas yang ada di aplikasi bisa dilihat melalui tautan berikut.
 https://docs.google.com/document/d/1eoNNF9EZVXYAyPBLv-6AVh3a8PLihrx4_On02jCOFAo/edit#
 
-Terima kasih sudah berkunjung 
+### Terima kasih sudah berkunjung 
