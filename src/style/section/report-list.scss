@@ -5,11 +5,22 @@
     width: 100%;
 
     @include desktop {
-        @include flex-box($justify: space-between, $align: flex-start);
+        @include flex-box($justify: flex-start, $align: flex-start);
         flex-wrap: wrap;
     }
     
     .report-preview {
+        margin-bottom: 1em;
+        
+        @include desktop {
+            padding: 1.5em 1em;
+            width: 50%;
+        }
+
+        @include large-desktop{
+            flex-basis: 33.33%;
+        }
+
         text-align: left;
         padding: 1em 0;
 
@@ -23,19 +34,6 @@
             height: 16em;
             object-fit: cover;
             
-        }
-    }
-
-    .report-preview {
-        margin-bottom: 2em;
-
-        @include desktop {
-            padding: 0 1em;
-            width: 50%;
-        }
-
-        @include large-desktop {
-            width: 30%;
         }
     }
 }

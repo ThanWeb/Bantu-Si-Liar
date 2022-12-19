@@ -8,7 +8,7 @@ const ReportsSection = ({ reportList }) => {
         const expectedTotal = screen.width >= 992 && screen.width <= 1024 ? 4 : 3
         const length = reportList.length < expectedTotal ? reportList.length : expectedTotal
         const selectedReports = []
-        for (let i = 0; i < length; i++) {
+        for (let i = reports.length - 1; i > reports.length - length - 1; i--) {
             const report = reports[i]
             selectedReports.push(<ReportPreview key={i} reportData={report}/>)
         }

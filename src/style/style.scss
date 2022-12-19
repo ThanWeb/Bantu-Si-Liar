@@ -74,7 +74,7 @@ button, a, input, textarea, svg, select, option {
 
 main {
     margin-top: $top-gap;
-    padding: 2.5em 2em 2em;
+    padding: 2.5em 1em 2em;
     @include flex-box($direction: column, $justify: flex-start);
     width: 100%;
     min-height: 75vh;

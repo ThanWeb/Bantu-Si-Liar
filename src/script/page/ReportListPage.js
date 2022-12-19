@@ -29,7 +29,7 @@ const ReportListPage = () => {
     return (
         <div className='report-list-page'>
             {
-                reports.map((report, index) => <ReportPreview key={index} reportData={report}/>)
+                reports.slice(0).reverse().map((report, index) => <ReportPreview key={index} reportData={report}/>)
             }
         </div>
     )
