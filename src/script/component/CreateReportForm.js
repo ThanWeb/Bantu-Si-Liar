@@ -77,7 +77,16 @@ const CreateReportForm = ({ createReport, profileData }) => {
     }
 
     const fileOnchangeHandler = (event) => {
-        onPictureChange(event.target.files[0])
+        const type = `${event.target.files[0].type}`
+
+        if (type === 'image/png' || type === 'image/jpg' || type === 'image/jpeg') {
+            onPictureChange(event.target.files[0])
+        } else {
+            setMessage('Ekstensi Gambar tidak didukung')
+            setError(true)
+            showNotification()
+            event.target.value = ''
+        }
     }
 
     const changeCityOption = () => {
@@ -157,7 +166,7 @@ const CreateReportForm = ({ createReport, profileData }) => {
                 </div>
                 <div className='input-field'>
                     <label htmlFor='picture'>Foto Hewan</label>
-                    <input id='picture' type='file' onChange={fileOnchangeHandler} required />
+                    <input id='picture' type='file' onChange={fileOnchangeHandler} accept='image/jpeg, image/png' required />
                 </div>
                 <div className='input-field'>
                     <button type='submit' className='send-btn btn'>KIRIM LAPORAN</button>
