@@ -39,4 +39,17 @@
             width: 100%;
         }
     }
+
+    .loading-section {
+        @include flex-box();
+        @include sticky-elemen();
+        color: $primary-icon-color;
+        height: 100%;
+        background-color: rgba($color: $primary-color, $alpha: .5);
+    }
+
+    .loading-section.hidden {
+        display: none;
+    }
+
 }

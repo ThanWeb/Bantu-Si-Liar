@@ -36,7 +36,9 @@ const CreateReportForm = ({ createReport, profileData }) => {
         changeCityOption()
     }, [province])
 
-    const onSubmitHandler = async () => {
+    const onSubmitHandler = async (e) => {
+        document.querySelector('.loading-section').classList.remove('hidden')
+        e.preventDefault()
         const date = logTime()
         const formData = new FormData()
 
@@ -62,6 +64,7 @@ const CreateReportForm = ({ createReport, profileData }) => {
         })
 
             .then((res) => {
+                document.querySelector('.loading-section').classList.remove('hidden')
                 setMessage('Terima kasih, laporan anda akan segera diproses')
                 setError(false)
                 showNotification()
@@ -70,6 +73,7 @@ const CreateReportForm = ({ createReport, profileData }) => {
                 }, 4000)
             })
             .catch((err) => {
+                document.querySelector('.loading-section').classList.remove('hidden')
                 setMessage(err)
                 setError(true)
                 showNotification()
@@ -167,6 +171,9 @@ const CreateReportForm = ({ createReport, profileData }) => {
                 <div className='input-field'>
                     <label htmlFor='picture'>Foto Hewan</label>
                     <input id='picture' type='file' onChange={fileOnchangeHandler} accept='image/jpeg, image/png' required />
+                </div>
+                <div className='loading-section hidden'>
+                    <h2>Tunggu sebentar ...</h2>
                 </div>
                 <div className='input-field'>
                     <button type='submit' className='send-btn btn'>KIRIM LAPORAN</button>
